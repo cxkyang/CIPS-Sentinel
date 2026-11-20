@@ -1,0 +1,15 @@
+{
+  "asOf": "2026-10-19T10:42:00+08:00",
+  "openingBalance": 6.2,
+  "floor": 5.0,
+  "queueAmount": 2.4,
+  "treatsAvailable": 4.6,
+  "scheduledFlows": [
+    {
+      "time": "15:00",
+      "amount": 0.3,
+      "label": "计划内大额付款"
+    }
+  ],
+  "paths": 1200
+}

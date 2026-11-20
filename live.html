@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Agent Console · CIPS Sentinel</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="live.css">
+  <link rel="stylesheet" href="light.css">
+</head>
+<body class="live-page">
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+  <symbol id="i-logo" viewBox="0 0 32 32">
+    <path d="M7 22.5V9.5c0-1.1.9-2 2-2h8.5" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+    <path d="M25 9.5v13c0 1.1-.9 2-2 2h-8.5" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" opacity=".55"/>
+    <path d="M11.5 16h9" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <circle cx="7" cy="9.5" r="2" fill="currentColor"/>
+    <circle cx="25" cy="22.5" r="2" fill="currentColor" opacity=".55"/>
+  </symbol>
+  <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="8" cy="17" r="2"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5v13l10-6.5-10-6.5z" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v5.5c0 4.6-3 8.2-7 9.5-4-1.3-7-4.9-7-9.5V6l7-3z"/><path d="M9 12l2 2 4-4"/></symbol>
+  <symbol id="i-git" viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.2"/><circle cx="18" cy="6" r="2.2"/><circle cx="12" cy="18" r="2.2"/><path d="M6 8.2v2.3A4.5 4.5 0 0 0 10.5 15h1.3M18 8.2v2.3a4.5 4.5 0 0 1-4.5 4.5h-1.3"/></symbol>
+  <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2.3 5.7M20 5v6h-6"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/><path d="M12 14.5v2.5"/></symbol>
+</svg>
+<div class="app">
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html" aria-label="返回首页">
+        <span class="brand-mark"><svg class="icon lg" style="color:var(--jade)"><use href="#i-logo"/></svg></span>
+        <span class="brand-copy"><span class="brand-name">CIPS·SENTINEL</span><span class="brand-sub">Agent Console · 真实模型</span></span>
+      </a>
+      <nav class="nav" aria-label="主导航">
+        <a class="nav-btn" href="index.html#cockpit">指挥舱</a>
+        <a class="nav-btn active" href="live.html">Agent Console <span class="nav-count">LIVE</span></a>
+        <a class="nav-btn" href="recon.html">CNAPS｜CIPS 对账</a>
+        <a class="nav-btn" href="tops.html">分行头寸</a>
+        <a class="nav-btn" href="docs/CIPS-Sentinel-需求说明书-v1.0.pdf" target="_blank" rel="noopener">需求说明书</a>
+        <a class="nav-btn" href="docs/CIPS-Sentinel-项目设计书-v1.0.pdf" target="_blank" rel="noopener">设计书</a>
+        <a class="nav-btn" href="docs/CIPS-Sentinel-路演-Deck-v1.0.pdf" target="_blank" rel="noopener">路演 Deck <span class="nav-count">PDF</span></a>
+      </nav>
+      <div class="topbar-right">
+        <span class="live-pill" id="healthPill"><span class="live-dot"></span>连接中</span>
+        <span class="clock">REAL MODEL · SSE</span>
+        <div class="avatar-wrap"><div class="avatar">林</div><div class="avatar-meta"><b>林岚</b><span>MKTY · 授权人</span></div></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="live-main">
+    <section class="live-hero">
+      <div class="eyebrow"><span class="live-dot"></span>AGENT CONSOLE · REAL MODEL<span class="sep"></span><span class="tag">SSE 流式执行</span></div>
+      <h1 class="live-title">让模型<em>真的</em>跑一次。</h1>
+      <p class="live-lede">模型负责规划与解释，工具负责数字与执行，规则引擎负责闸门。选择 OpenAI-compatible 或 Ollama，点击运行，看它一步步调用工具；没有模型时自动回退确定性沙盘。</p>
+    </section>
+
+    <div class="live-grid">
+      <aside class="card live-control">
+        <div class="card-head">
+          <div class="card-title"><svg class="icon"><use href="#i-sliders"/></svg>运行配置</div>
+          <span class="pill ok" style="font-size:8px">SERVER-SIDE KEY</span>
+        </div>
+        <div class="live-body">
+          <div class="live-label">模型提供方</div>
+          <div class="provider-tabs" id="providerTabs">
+            <button class="provider-tab active" data-provider="auto">自动</button>
+            <button class="provider-tab" data-provider="openai">OpenAI 兼容</button>
+            <button class="provider-tab" data-provider="ollama">Ollama</button>
+            <button class="provider-tab" data-provider="mock">Mock</button>
+          </div>
+          <div class="provider-info" id="providerInfo">正在读取服务端配置…</div>
+
+          <div class="live-label" style="margin-top:16px">目标契约</div>
+          <textarea id="goalInput" class="goal-input" rows="5">2026-10-19 16:30 前，完成 1,284 笔跨境付款、合计 21.6 亿元的全额清算；CIPS 余额不低于 5.00 亿元、日终不高于 9.50 亿元；综合融资成本不超过 1.95%；P1 High 零延误。</textarea>
+
+          <dl class="contract-list">
+            <div><dt>CIPS 底线</dt><dd>≥ 5.00 亿</dd></div>
+            <div><dt>日终上限</dt><dd>≤ 9.50 亿</dd></div>
+            <div><dt>单笔授权</dt><dd>≥ 2.00 亿</dd></div>
+            <div><dt>日累计</dt><dd>≤ 4.00 亿</dd></div>
+          </dl>
+
+          <div class="live-actions">
+            <button class="btn primary" id="runBtn"><svg class="icon sm"><use href="#i-play"/></svg>运行真实推演</button>
+            <button class="btn ghost" id="stopBtn" disabled><svg class="icon sm"><use href="#i-close"/></svg>停止</button>
+          </div>
+
+          <div class="health-box" id="healthBox">正在连接本地 Agent 服务…</div>
+
+          <div class="approval-box" id="approvalBox" hidden>
+            <div class="approval-top"><svg class="icon sm"><use href="#i-shield"/></svg>需要 MKTY 交易授权</div>
+            <div class="approval-amount" id="approvalAmount">¥0.00 亿</div>
+            <div class="approval-reason" id="approvalReason"></div>
+            <div class="approval-actions">
+              <button class="btn small primary" id="approveBtn">批准，提交执行请求</button>
+              <button class="btn small ghost" id="rejectBtn">拒绝并转人工</button>
+            </div>
+          </div>
+
+          <div class="error-box" id="errorBox" hidden></div>
+        </div>
+      </aside>
+
+      <section class="card live-trace">
+        <div class="card-head">
+          <div>
+            <div class="card-title"><svg class="icon"><use href="#i-git"/></svg>Agent 实时轨迹</div>
+            <div class="card-sub" id="runMeta">尚未开始 · 等待运行</div>
+          </div>
+          <button class="btn small ghost" id="clearBtn"><svg class="icon sm"><use href="#i-refresh"/></svg>清空</button>
+        </div>
+        <div class="live-trace-body" id="traceList">
+          <div class="empty-state">
+            <div class="empty-orb">CS</div>
+            <h3>选择模型，点击运行</h3>
+            <p>真实模型会逐步返回 thought / tool_call / tool_result；高风险动作会暂停，等待你授权。</p>
+          </div>
+        </div>
+        <div class="final-box" id="finalBox" hidden>
+          <div class="final-kicker">FINAL ANSWER</div>
+          <div class="final-text" id="finalText"></div>
+          <div class="final-meta" id="finalMeta"></div>
+        </div>
+      </section>
+    </div>
+
+    <div class="live-note">
+      <span><b>安全边界</b> API Key 只在服务端；浏览器不接触密钥。</span>
+      <span><b>数字可信</b> 余额、缺口、成本、SLA 全部来自工具。</span>
+      <span><b>人在环</b> ≥2 亿元内部调拨必须由 MKTY 授权，执行通道处理。</span>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-left"><span class="footer-dot"></span><span>CIPS Sentinel Agent Console · v0.9 · 模型规划 + 工具执行 + 规则闸门</span></div>
+    <div class="footer-right"><span><svg class="icon sm"><use href="#i-lock"/></svg>服务端密钥</span><span><svg class="icon sm"><use href="#i-shield"/></svg>MKTY 授权</span><a href="index.html">返回沙盘原型 →</a></div>
+  </footer>
+</div>
+<script src="live.js"></script>
+</body>
+</html>

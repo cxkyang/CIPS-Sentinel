@@ -1,0 +1,1285 @@
+{
+  "source": "sandbox CNAPS daily inflow history",
+  "rows": [
+    {
+      "date": "2026-02-13",
+      "weekday": 5,
+      "recurring": 18.0522,
+      "large": 2.6023,
+      "instant": 0.2578,
+      "total": 20.9123,
+      "unmatched": 1.5152,
+      "confirmed": 19.397
+    },
+    {
+      "date": "2026-02-16",
+      "weekday": 1,
+      "recurring": 15.1158,
+      "large": 2.8864,
+      "instant": 0.727,
+      "total": 18.7292,
+      "unmatched": 0.6274,
+      "confirmed": 18.1018
+    },
+    {
+      "date": "2026-02-17",
+      "weekday": 2,
+      "recurring": 15.4348,
+      "large": 4.8725,
+      "instant": 0.4273,
+      "total": 20.7347,
+      "unmatched": 1.4731,
+      "confirmed": 19.2616
+    },
+    {
+      "date": "2026-02-18",
+      "weekday": 3,
+      "recurring": 16.3088,
+      "large": 1.7462,
+      "instant": 0.7228,
+      "total": 18.7778,
+      "unmatched": 1.2358,
+      "confirmed": 17.542
+    },
+    {
+      "date": "2026-02-19",
+      "weekday": 4,
+      "recurring": 16.5952,
+      "large": 2.084,
+      "instant": 0.5578,
+      "total": 19.237,
+      "unmatched": 0.6289,
+      "confirmed": 18.6081
+    },
+    {
+      "date": "2026-02-20",
+      "weekday": 5,
+      "recurring": 18.1808,
+      "large": 1.7943,
+      "instant": 0.2413,
+      "total": 20.2164,
+      "unmatched": 1.2387,
+      "confirmed": 18.9777
+    },
+    {
+      "date": "2026-02-23",
+      "weekday": 1,
+      "recurring": 15.5992,
+      "large": 1.3281,
+      "instant": 0.5014,
+      "total": 17.4286,
+      "unmatched": 0.5906,
+      "confirmed": 16.838
+    },
+    {
+      "date": "2026-02-24",
+      "weekday": 2,
+      "recurring": 16.0009,
+      "large": 1.698,
+      "instant": 0.5632,
+      "total": 18.2621,
+      "unmatched": 0.878,
+      "confirmed": 17.3841
+    },
+    {
+      "date": "2026-02-25",
+      "weekday": 3,
+      "recurring": 16.5954,
+      "large": 2.3717,
+      "instant": 0.699,
+      "total": 19.6662,
+      "unmatched": 1.1365,
+      "confirmed": 18.5297
+    },
+    {
+      "date": "2026-02-26",
+      "weekday": 4,
+      "recurring": 16.9594,
+      "large": 2.0534,
+      "instant": 0.2104,
+      "total": 19.2232,
+      "unmatched": 0.9304,
+      "confirmed": 18.2928
+    },
+    {
+      "date": "2026-02-27",
+      "weekday": 5,
+      "recurring": 17.6422,
+      "large": 3.9506,
+      "instant": 0.4082,
+      "total": 22.001,
+      "unmatched": 1.5931,
+      "confirmed": 20.4079
+    },
+    {
+      "date": "2026-03-02",
+      "weekday": 1,
+      "recurring": 15.3028,
+      "large": 3.2182,
+      "instant": 0.3955,
+      "total": 18.9164,
+      "unmatched": 1.2029,
+      "confirmed": 17.7135
+    },
+    {
+      "date": "2026-03-03",
+      "weekday": 2,
+      "recurring": 16.2151,
+      "large": 3.9977,
+      "instant": 0.2703,
+      "total": 20.4831,
+      "unmatched": 1.1779,
+      "confirmed": 19.3051
+    },
+    {
+      "date": "2026-03-04",
+      "weekday": 3,
+      "recurring": 17.2767,
+      "large": 1.7549,
+      "instant": 0.185,
+      "total": 19.2167,
+      "unmatched": 0.7109,
+      "confirmed": 18.5057
+    },
+    {
+      "date": "2026-03-05",
+      "weekday": 4,
+      "recurring": 15.8623,
+      "large": 1.9745,
+      "instant": 0.5561,
+      "total": 18.3928,
+      "unmatched": 1.1791,
+      "confirmed": 17.2138
+    },
+    {
+      "date": "2026-03-06",
+      "weekday": 5,
+      "recurring": 18.4407,
+      "large": 2.5212,
+      "instant": 0.5419,
+      "total": 21.5037,
+      "unmatched": 1.6785,
+      "confirmed": 19.8252
+    },
+    {
+      "date": "2026-03-09",
+      "weekday": 1,
+      "recurring": 15.3309,
+      "large": 3.761,
+      "instant": 0.6042,
+      "total": 19.6961,
+      "unmatched": 1.1038,
+      "confirmed": 18.5922
+    },
+    {
+      "date": "2026-03-10",
+      "weekday": 2,
+      "recurring": 16.2745,
+      "large": 1.8477,
+      "instant": 0.2034,
+      "total": 18.3257,
+      "unmatched": 0.7968,
+      "confirmed": 17.5289
+    },
+    {
+      "date": "2026-03-11",
+      "weekday": 3,
+      "recurring": 17.1422,
+      "large": 4.0756,
+      "instant": 0.1997,
+      "total": 21.4175,
+      "unmatched": 1.377,
+      "confirmed": 20.0405
+    },
+    {
+      "date": "2026-03-12",
+      "weekday": 4,
+      "recurring": 16.1944,
+      "large": 4.214,
+      "instant": 0.3118,
+      "total": 20.7202,
+      "unmatched": 1.5622,
+      "confirmed": 19.158
+    },
+    {
+      "date": "2026-03-13",
+      "weekday": 5,
+      "recurring": 18.4803,
+      "large": 3.3025,
+      "instant": 0.5177,
+      "total": 22.3004,
+      "unmatched": 0.9805,
+      "confirmed": 21.3199
+    },
+    {
+      "date": "2026-03-16",
+      "weekday": 1,
+      "recurring": 14.9649,
+      "large": 6.0808,
+      "instant": 0.2888,
+      "total": 21.3345,
+      "unmatched": 0.673,
+      "confirmed": 20.6615
+    },
+    {
+      "date": "2026-03-17",
+      "weekday": 2,
+      "recurring": 16.0075,
+      "large": 3.8203,
+      "instant": 0.6067,
+      "total": 20.4346,
+      "unmatched": 1.3911,
+      "confirmed": 19.0435
+    },
+    {
+      "date": "2026-03-18",
+      "weekday": 3,
+      "recurring": 16.3085,
+      "large": 6.6232,
+      "instant": 0.2763,
+      "total": 23.2079,
+      "unmatched": 1.4661,
+      "confirmed": 21.7418
+    },
+    {
+      "date": "2026-03-19",
+      "weekday": 4,
+      "recurring": 16.8754,
+      "large": 2.2984,
+      "instant": 0.4485,
+      "total": 19.6223,
+      "unmatched": 1.0034,
+      "confirmed": 18.6189
+    },
+    {
+      "date": "2026-03-20",
+      "weekday": 5,
+      "recurring": 18.7023,
+      "large": 4.6097,
+      "instant": 0.2956,
+      "total": 23.6076,
+      "unmatched": 0.9202,
+      "confirmed": 22.6874
+    },
+    {
+      "date": "2026-03-23",
+      "weekday": 1,
+      "recurring": 15.5427,
+      "large": 3.0988,
+      "instant": 0.5873,
+      "total": 19.2288,
+      "unmatched": 1.2097,
+      "confirmed": 18.0192
+    },
+    {
+      "date": "2026-03-24",
+      "weekday": 2,
+      "recurring": 16.6235,
+      "large": 1.3505,
+      "instant": 0.2707,
+      "total": 18.2447,
+      "unmatched": 0.5248,
+      "confirmed": 17.7199
+    },
+    {
+      "date": "2026-03-25",
+      "weekday": 3,
+      "recurring": 16.7992,
+      "large": 3.3497,
+      "instant": 0.3809,
+      "total": 20.5298,
+      "unmatched": 0.8674,
+      "confirmed": 19.6624
+    },
+    {
+      "date": "2026-03-26",
+      "weekday": 4,
+      "recurring": 16.2208,
+      "large": 4.0491,
+      "instant": 0.563,
+      "total": 20.8329,
+      "unmatched": 1.5621,
+      "confirmed": 19.2708
+    },
+    {
+      "date": "2026-03-27",
+      "weekday": 5,
+      "recurring": 18.6458,
+      "large": 5.9009,
+      "instant": 0.6274,
+      "total": 25.1741,
+      "unmatched": 1.8868,
+      "confirmed": 23.2873
+    },
+    {
+      "date": "2026-03-30",
+      "weekday": 1,
+      "recurring": 15.479,
+      "large": 3.0125,
+      "instant": 0.4054,
+      "total": 18.8969,
+      "unmatched": 1.3429,
+      "confirmed": 17.5541
+    },
+    {
+      "date": "2026-03-31",
+      "weekday": 2,
+      "recurring": 16.0861,
+      "large": 3.1425,
+      "instant": 0.3888,
+      "total": 19.6175,
+      "unmatched": 1.3663,
+      "confirmed": 18.2512
+    },
+    {
+      "date": "2026-04-01",
+      "weekday": 3,
+      "recurring": 16.755,
+      "large": 2.8496,
+      "instant": 0.5356,
+      "total": 20.1402,
+      "unmatched": 0.713,
+      "confirmed": 19.4272
+    },
+    {
+      "date": "2026-04-02",
+      "weekday": 4,
+      "recurring": 16.4161,
+      "large": 2.0168,
+      "instant": 0.2547,
+      "total": 18.6876,
+      "unmatched": 1.45,
+      "confirmed": 17.2376
+    },
+    {
+      "date": "2026-04-03",
+      "weekday": 5,
+      "recurring": 18.2385,
+      "large": 1.7134,
+      "instant": 0.3109,
+      "total": 20.2629,
+      "unmatched": 0.9523,
+      "confirmed": 19.3106
+    },
+    {
+      "date": "2026-04-06",
+      "weekday": 1,
+      "recurring": 15.3341,
+      "large": 2.735,
+      "instant": 0.4779,
+      "total": 18.547,
+      "unmatched": 1.3651,
+      "confirmed": 17.1819
+    },
+    {
+      "date": "2026-04-07",
+      "weekday": 2,
+      "recurring": 15.4384,
+      "large": 1.8723,
+      "instant": 0.1853,
+      "total": 17.496,
+      "unmatched": 1.3669,
+      "confirmed": 16.1291
+    },
+    {
+      "date": "2026-04-08",
+      "weekday": 3,
+      "recurring": 16.4891,
+      "large": 2.0525,
+      "instant": 0.6458,
+      "total": 19.1874,
+      "unmatched": 1.5125,
+      "confirmed": 17.6749
+    },
+    {
+      "date": "2026-04-09",
+      "weekday": 4,
+      "recurring": 16.6768,
+      "large": 4.2697,
+      "instant": 0.4936,
+      "total": 21.4401,
+      "unmatched": 1.0539,
+      "confirmed": 20.3862
+    },
+    {
+      "date": "2026-04-10",
+      "weekday": 5,
+      "recurring": 17.69,
+      "large": 2.5189,
+      "instant": 0.5991,
+      "total": 20.808,
+      "unmatched": 1.2101,
+      "confirmed": 19.598
+    },
+    {
+      "date": "2026-04-13",
+      "weekday": 1,
+      "recurring": 14.9155,
+      "large": 2.8935,
+      "instant": 0.4875,
+      "total": 18.2964,
+      "unmatched": 0.5329,
+      "confirmed": 17.7636
+    },
+    {
+      "date": "2026-04-14",
+      "weekday": 2,
+      "recurring": 16.4236,
+      "large": 1.7186,
+      "instant": 0.3837,
+      "total": 18.5258,
+      "unmatched": 0.5784,
+      "confirmed": 17.9474
+    },
+    {
+      "date": "2026-04-15",
+      "weekday": 3,
+      "recurring": 16.8868,
+      "large": 1.6952,
+      "instant": 0.5828,
+      "total": 19.1647,
+      "unmatched": 0.5133,
+      "confirmed": 18.6514
+    },
+    {
+      "date": "2026-04-16",
+      "weekday": 4,
+      "recurring": 17.0378,
+      "large": 4.7661,
+      "instant": 0.6746,
+      "total": 22.4784,
+      "unmatched": 0.9102,
+      "confirmed": 21.5683
+    },
+    {
+      "date": "2026-04-17",
+      "weekday": 5,
+      "recurring": 17.8391,
+      "large": 4.4366,
+      "instant": 0.6789,
+      "total": 22.9546,
+      "unmatched": 0.6321,
+      "confirmed": 22.3225
+    },
+    {
+      "date": "2026-04-20",
+      "weekday": 1,
+      "recurring": 15.1419,
+      "large": 3.2784,
+      "instant": 0.6465,
+      "total": 19.0668,
+      "unmatched": 0.5219,
+      "confirmed": 18.5449
+    },
+    {
+      "date": "2026-04-21",
+      "weekday": 2,
+      "recurring": 15.4592,
+      "large": 4.2957,
+      "instant": 0.3004,
+      "total": 20.0553,
+      "unmatched": 1.0973,
+      "confirmed": 18.958
+    },
+    {
+      "date": "2026-04-22",
+      "weekday": 3,
+      "recurring": 17.3629,
+      "large": 4.6106,
+      "instant": 0.5495,
+      "total": 22.523,
+      "unmatched": 1.6528,
+      "confirmed": 20.8702
+    },
+    {
+      "date": "2026-04-23",
+      "weekday": 4,
+      "recurring": 15.7876,
+      "large": 4.5315,
+      "instant": 0.5032,
+      "total": 20.8222,
+      "unmatched": 1.5379,
+      "confirmed": 19.2844
+    },
+    {
+      "date": "2026-04-24",
+      "weekday": 5,
+      "recurring": 17.7472,
+      "large": 3.6528,
+      "instant": 0.6084,
+      "total": 22.0084,
+      "unmatched": 1.4564,
+      "confirmed": 20.552
+    },
+    {
+      "date": "2026-04-27",
+      "weekday": 1,
+      "recurring": 14.7793,
+      "large": 3.9119,
+      "instant": 0.6864,
+      "total": 19.3776,
+      "unmatched": 0.5419,
+      "confirmed": 18.8356
+    },
+    {
+      "date": "2026-04-28",
+      "weekday": 2,
+      "recurring": 15.9166,
+      "large": 3.4049,
+      "instant": 0.6063,
+      "total": 19.9278,
+      "unmatched": 0.6403,
+      "confirmed": 19.2875
+    },
+    {
+      "date": "2026-04-29",
+      "weekday": 3,
+      "recurring": 16.3802,
+      "large": 11.525,
+      "instant": 0.375,
+      "total": 28.2802,
+      "unmatched": 1.6849,
+      "confirmed": 26.5953
+    },
+    {
+      "date": "2026-04-30",
+      "weekday": 4,
+      "recurring": 16.0594,
+      "large": 5.9507,
+      "instant": 0.5158,
+      "total": 22.5259,
+      "unmatched": 1.6074,
+      "confirmed": 20.9185
+    },
+    {
+      "date": "2026-05-01",
+      "weekday": 5,
+      "recurring": 18.55,
+      "large": 1.6171,
+      "instant": 0.3546,
+      "total": 20.5218,
+      "unmatched": 1.1744,
+      "confirmed": 19.3474
+    },
+    {
+      "date": "2026-05-04",
+      "weekday": 1,
+      "recurring": 15.202,
+      "large": 3.8767,
+      "instant": 0.4865,
+      "total": 19.5651,
+      "unmatched": 1.0134,
+      "confirmed": 18.5517
+    },
+    {
+      "date": "2026-05-05",
+      "weekday": 2,
+      "recurring": 15.9058,
+      "large": 3.376,
+      "instant": 0.4897,
+      "total": 19.7715,
+      "unmatched": 1.0223,
+      "confirmed": 18.7492
+    },
+    {
+      "date": "2026-05-06",
+      "weekday": 3,
+      "recurring": 16.7901,
+      "large": 8.1453,
+      "instant": 0.2239,
+      "total": 25.1594,
+      "unmatched": 1.2561,
+      "confirmed": 23.9032
+    },
+    {
+      "date": "2026-05-07",
+      "weekday": 4,
+      "recurring": 16.4333,
+      "large": 4.8228,
+      "instant": 0.7153,
+      "total": 21.9714,
+      "unmatched": 1.2948,
+      "confirmed": 20.6765
+    },
+    {
+      "date": "2026-05-08",
+      "weekday": 5,
+      "recurring": 17.6882,
+      "large": 2.3295,
+      "instant": 0.6667,
+      "total": 20.6845,
+      "unmatched": 0.8975,
+      "confirmed": 19.787
+    },
+    {
+      "date": "2026-05-11",
+      "weekday": 1,
+      "recurring": 14.9225,
+      "large": 4.1555,
+      "instant": 0.4372,
+      "total": 19.5152,
+      "unmatched": 1.3136,
+      "confirmed": 18.2016
+    },
+    {
+      "date": "2026-05-12",
+      "weekday": 2,
+      "recurring": 15.4822,
+      "large": 4.7456,
+      "instant": 0.2427,
+      "total": 20.4705,
+      "unmatched": 1.3458,
+      "confirmed": 19.1247
+    },
+    {
+      "date": "2026-05-13",
+      "weekday": 3,
+      "recurring": 16.7252,
+      "large": 1.8501,
+      "instant": 0.7058,
+      "total": 19.2811,
+      "unmatched": 0.5332,
+      "confirmed": 18.7479
+    },
+    {
+      "date": "2026-05-14",
+      "weekday": 4,
+      "recurring": 16.5336,
+      "large": 4.1644,
+      "instant": 0.2125,
+      "total": 20.9104,
+      "unmatched": 1.4404,
+      "confirmed": 19.47
+    },
+    {
+      "date": "2026-05-15",
+      "weekday": 5,
+      "recurring": 17.5992,
+      "large": 2.682,
+      "instant": 0.6319,
+      "total": 20.9131,
+      "unmatched": 1.354,
+      "confirmed": 19.5591
+    },
+    {
+      "date": "2026-05-18",
+      "weekday": 1,
+      "recurring": 14.7169,
+      "large": 1.9693,
+      "instant": 0.385,
+      "total": 17.0712,
+      "unmatched": 0.7102,
+      "confirmed": 16.361
+    },
+    {
+      "date": "2026-05-19",
+      "weekday": 2,
+      "recurring": 15.5443,
+      "large": 2.4087,
+      "instant": 0.2633,
+      "total": 18.2163,
+      "unmatched": 1.0652,
+      "confirmed": 17.1511
+    },
+    {
+      "date": "2026-05-20",
+      "weekday": 3,
+      "recurring": 16.5302,
+      "large": 1.5611,
+      "instant": 0.2052,
+      "total": 18.2965,
+      "unmatched": 0.8806,
+      "confirmed": 17.4158
+    },
+    {
+      "date": "2026-05-21",
+      "weekday": 4,
+      "recurring": 16.7887,
+      "large": 4.0149,
+      "instant": 0.3099,
+      "total": 21.1136,
+      "unmatched": 1.4729,
+      "confirmed": 19.6406
+    },
+    {
+      "date": "2026-05-22",
+      "weekday": 5,
+      "recurring": 18.4238,
+      "large": 3.3611,
+      "instant": 0.3797,
+      "total": 22.1645,
+      "unmatched": 1.6195,
+      "confirmed": 20.5451
+    },
+    {
+      "date": "2026-05-25",
+      "weekday": 1,
+      "recurring": 15.6155,
+      "large": 3.3155,
+      "instant": 0.4291,
+      "total": 19.3601,
+      "unmatched": 0.7176,
+      "confirmed": 18.6425
+    },
+    {
+      "date": "2026-05-26",
+      "weekday": 2,
+      "recurring": 16.4976,
+      "large": 2.7987,
+      "instant": 0.3728,
+      "total": 19.6691,
+      "unmatched": 1.2303,
+      "confirmed": 18.4389
+    },
+    {
+      "date": "2026-05-27",
+      "weekday": 3,
+      "recurring": 16.5699,
+      "large": 4.5599,
+      "instant": 0.5642,
+      "total": 21.694,
+      "unmatched": 0.6356,
+      "confirmed": 21.0584
+    },
+    {
+      "date": "2026-05-28",
+      "weekday": 4,
+      "recurring": 15.8929,
+      "large": 4.0904,
+      "instant": 0.5506,
+      "total": 20.534,
+      "unmatched": 1.5791,
+      "confirmed": 18.9548
+    },
+    {
+      "date": "2026-05-29",
+      "weekday": 5,
+      "recurring": 17.5928,
+      "large": 6.443,
+      "instant": 0.4422,
+      "total": 24.478,
+      "unmatched": 1.9369,
+      "confirmed": 22.5411
+    },
+    {
+      "date": "2026-06-01",
+      "weekday": 1,
+      "recurring": 15.17,
+      "large": 3.7035,
+      "instant": 0.2101,
+      "total": 19.0836,
+      "unmatched": 0.7392,
+      "confirmed": 18.3444
+    },
+    {
+      "date": "2026-06-02",
+      "weekday": 2,
+      "recurring": 16.3371,
+      "large": 1.9798,
+      "instant": 0.424,
+      "total": 18.741,
+      "unmatched": 1.488,
+      "confirmed": 17.253
+    },
+    {
+      "date": "2026-06-03",
+      "weekday": 3,
+      "recurring": 16.1727,
+      "large": 4.0987,
+      "instant": 0.6813,
+      "total": 20.9528,
+      "unmatched": 0.8519,
+      "confirmed": 20.1009
+    },
+    {
+      "date": "2026-06-04",
+      "weekday": 4,
+      "recurring": 16.9954,
+      "large": 7.1638,
+      "instant": 0.3717,
+      "total": 24.5309,
+      "unmatched": 1.7971,
+      "confirmed": 22.7339
+    },
+    {
+      "date": "2026-06-05",
+      "weekday": 5,
+      "recurring": 18.8117,
+      "large": 4.7448,
+      "instant": 0.224,
+      "total": 23.7805,
+      "unmatched": 0.9995,
+      "confirmed": 22.781
+    },
+    {
+      "date": "2026-06-08",
+      "weekday": 1,
+      "recurring": 14.7321,
+      "large": 4.7803,
+      "instant": 0.6991,
+      "total": 20.2115,
+      "unmatched": 0.589,
+      "confirmed": 19.6225
+    },
+    {
+      "date": "2026-06-09",
+      "weekday": 2,
+      "recurring": 16.3797,
+      "large": 3.2104,
+      "instant": 0.5639,
+      "total": 20.154,
+      "unmatched": 0.6279,
+      "confirmed": 19.5261
+    },
+    {
+      "date": "2026-06-10",
+      "weekday": 3,
+      "recurring": 16.7901,
+      "large": 3.3179,
+      "instant": 0.6389,
+      "total": 20.7469,
+      "unmatched": 1.2575,
+      "confirmed": 19.4894
+    },
+    {
+      "date": "2026-06-11",
+      "weekday": 4,
+      "recurring": 16.4992,
+      "large": 1.4636,
+      "instant": 0.4199,
+      "total": 18.3827,
+      "unmatched": 0.5535,
+      "confirmed": 17.8292
+    },
+    {
+      "date": "2026-06-12",
+      "weekday": 5,
+      "recurring": 18.715,
+      "large": 6.3829,
+      "instant": 0.2266,
+      "total": 25.3245,
+      "unmatched": 1.5334,
+      "confirmed": 23.791
+    },
+    {
+      "date": "2026-06-15",
+      "weekday": 1,
+      "recurring": 15.062,
+      "large": 1.9623,
+      "instant": 0.675,
+      "total": 17.6993,
+      "unmatched": 0.4729,
+      "confirmed": 17.2264
+    },
+    {
+      "date": "2026-06-16",
+      "weekday": 2,
+      "recurring": 16.6071,
+      "large": 1.3208,
+      "instant": 0.6102,
+      "total": 18.538,
+      "unmatched": 1.2126,
+      "confirmed": 17.3254
+    },
+    {
+      "date": "2026-06-17",
+      "weekday": 3,
+      "recurring": 16.8248,
+      "large": 2.1081,
+      "instant": 0.4418,
+      "total": 19.3747,
+      "unmatched": 0.6526,
+      "confirmed": 18.7221
+    },
+    {
+      "date": "2026-06-18",
+      "weekday": 4,
+      "recurring": 16.596,
+      "large": 3.9033,
+      "instant": 0.4289,
+      "total": 20.9282,
+      "unmatched": 0.8261,
+      "confirmed": 20.1021
+    },
+    {
+      "date": "2026-06-19",
+      "weekday": 5,
+      "recurring": 18.5167,
+      "large": 7.6349,
+      "instant": 0.6984,
+      "total": 26.8499,
+      "unmatched": 1.7296,
+      "confirmed": 25.1204
+    },
+    {
+      "date": "2026-06-22",
+      "weekday": 1,
+      "recurring": 15.4623,
+      "large": 2.2959,
+      "instant": 0.2551,
+      "total": 18.0132,
+      "unmatched": 0.6971,
+      "confirmed": 17.3161
+    },
+    {
+      "date": "2026-06-23",
+      "weekday": 2,
+      "recurring": 15.8732,
+      "large": 4.0672,
+      "instant": 0.3093,
+      "total": 20.2497,
+      "unmatched": 0.7789,
+      "confirmed": 19.4708
+    },
+    {
+      "date": "2026-06-24",
+      "weekday": 3,
+      "recurring": 16.4554,
+      "large": 1.7958,
+      "instant": 0.2259,
+      "total": 18.4772,
+      "unmatched": 1.1315,
+      "confirmed": 17.3457
+    },
+    {
+      "date": "2026-06-25",
+      "weekday": 4,
+      "recurring": 16.9061,
+      "large": 3.9353,
+      "instant": 0.6428,
+      "total": 21.4842,
+      "unmatched": 0.5764,
+      "confirmed": 20.9078
+    },
+    {
+      "date": "2026-06-26",
+      "weekday": 5,
+      "recurring": 18.8123,
+      "large": 4.2003,
+      "instant": 0.3707,
+      "total": 23.3832,
+      "unmatched": 0.5993,
+      "confirmed": 22.784
+    },
+    {
+      "date": "2026-06-29",
+      "weekday": 1,
+      "recurring": 15.3674,
+      "large": 5.5953,
+      "instant": 0.6139,
+      "total": 21.5766,
+      "unmatched": 1.089,
+      "confirmed": 20.4876
+    },
+    {
+      "date": "2026-06-30",
+      "weekday": 2,
+      "recurring": 16.551,
+      "large": 5.2212,
+      "instant": 0.6835,
+      "total": 22.4557,
+      "unmatched": 0.7537,
+      "confirmed": 21.702
+    },
+    {
+      "date": "2026-07-01",
+      "weekday": 3,
+      "recurring": 16.5729,
+      "large": 3.1717,
+      "instant": 0.2012,
+      "total": 19.9458,
+      "unmatched": 0.6324,
+      "confirmed": 19.3134
+    },
+    {
+      "date": "2026-07-02",
+      "weekday": 4,
+      "recurring": 15.8405,
+      "large": 2.9023,
+      "instant": 0.3787,
+      "total": 19.1215,
+      "unmatched": 0.9286,
+      "confirmed": 18.1929
+    },
+    {
+      "date": "2026-07-03",
+      "weekday": 5,
+      "recurring": 18.7701,
+      "large": 2.3802,
+      "instant": 0.5688,
+      "total": 21.7191,
+      "unmatched": 0.927,
+      "confirmed": 20.792
+    },
+    {
+      "date": "2026-07-06",
+      "weekday": 1,
+      "recurring": 15.4786,
+      "large": 3.5735,
+      "instant": 0.4731,
+      "total": 19.5251,
+      "unmatched": 1.1562,
+      "confirmed": 18.3689
+    },
+    {
+      "date": "2026-07-07",
+      "weekday": 2,
+      "recurring": 16.4328,
+      "large": 1.8329,
+      "instant": 0.7069,
+      "total": 18.9726,
+      "unmatched": 1.3157,
+      "confirmed": 17.6569
+    },
+    {
+      "date": "2026-07-08",
+      "weekday": 3,
+      "recurring": 17.4198,
+      "large": 2.6827,
+      "instant": 0.2208,
+      "total": 20.3233,
+      "unmatched": 1.4096,
+      "confirmed": 18.9137
+    },
+    {
+      "date": "2026-07-09",
+      "weekday": 4,
+      "recurring": 15.7853,
+      "large": 1.6535,
+      "instant": 0.5566,
+      "total": 17.9954,
+      "unmatched": 1.3998,
+      "confirmed": 16.5956
+    },
+    {
+      "date": "2026-07-10",
+      "weekday": 5,
+      "recurring": 17.8224,
+      "large": 1.4881,
+      "instant": 0.4701,
+      "total": 19.7806,
+      "unmatched": 0.5479,
+      "confirmed": 19.2328
+    },
+    {
+      "date": "2026-07-13",
+      "weekday": 1,
+      "recurring": 15.5407,
+      "large": 3.2581,
+      "instant": 0.381,
+      "total": 19.1798,
+      "unmatched": 1.2269,
+      "confirmed": 17.9529
+    },
+    {
+      "date": "2026-07-14",
+      "weekday": 2,
+      "recurring": 16.1765,
+      "large": 3.3503,
+      "instant": 0.4961,
+      "total": 20.0229,
+      "unmatched": 0.9757,
+      "confirmed": 19.0472
+    },
+    {
+      "date": "2026-07-15",
+      "weekday": 3,
+      "recurring": 16.4529,
+      "large": 4.8708,
+      "instant": 0.3362,
+      "total": 21.66,
+      "unmatched": 0.6182,
+      "confirmed": 21.0418
+    },
+    {
+      "date": "2026-07-16",
+      "weekday": 4,
+      "recurring": 15.8638,
+      "large": 2.3274,
+      "instant": 0.6052,
+      "total": 18.7964,
+      "unmatched": 1.415,
+      "confirmed": 17.3814
+    },
+    {
+      "date": "2026-07-17",
+      "weekday": 5,
+      "recurring": 18.7458,
+      "large": 3.2839,
+      "instant": 0.1914,
+      "total": 22.2212,
+      "unmatched": 1.4065,
+      "confirmed": 20.8147
+    },
+    {
+      "date": "2026-07-20",
+      "weekday": 1,
+      "recurring": 15.2494,
+      "large": 4.1947,
+      "instant": 0.6977,
+      "total": 20.1418,
+      "unmatched": 0.8589,
+      "confirmed": 19.2829
+    },
+    {
+      "date": "2026-07-21",
+      "weekday": 2,
+      "recurring": 16.4264,
+      "large": 3.9545,
+      "instant": 0.2308,
+      "total": 20.6117,
+      "unmatched": 1.1109,
+      "confirmed": 19.5009
+    },
+    {
+      "date": "2026-07-22",
+      "weekday": 3,
+      "recurring": 16.193,
+      "large": 1.5473,
+      "instant": 0.6757,
+      "total": 18.416,
+      "unmatched": 1.2431,
+      "confirmed": 17.1729
+    },
+    {
+      "date": "2026-07-23",
+      "weekday": 4,
+      "recurring": 16.5594,
+      "large": 4.1752,
+      "instant": 0.5796,
+      "total": 21.3143,
+      "unmatched": 0.8923,
+      "confirmed": 20.4219
+    },
+    {
+      "date": "2026-07-24",
+      "weekday": 5,
+      "recurring": 17.769,
+      "large": 2.7367,
+      "instant": 0.1844,
+      "total": 20.6901,
+      "unmatched": 0.5527,
+      "confirmed": 20.1374
+    },
+    {
+      "date": "2026-07-27",
+      "weekday": 1,
+      "recurring": 15.3721,
+      "large": 5.4644,
+      "instant": 0.3102,
+      "total": 21.1467,
+      "unmatched": 0.7876,
+      "confirmed": 20.3591
+    },
+    {
+      "date": "2026-07-28",
+      "weekday": 2,
+      "recurring": 16.2213,
+      "large": 5.4019,
+      "instant": 0.5792,
+      "total": 22.2024,
+      "unmatched": 0.6708,
+      "confirmed": 21.5316
+    },
+    {
+      "date": "2026-07-29",
+      "weekday": 3,
+      "recurring": 16.6104,
+      "large": 5.539,
+      "instant": 0.2165,
+      "total": 22.3659,
+      "unmatched": 1.7568,
+      "confirmed": 20.6091
+    },
+    {
+      "date": "2026-07-30",
+      "weekday": 4,
+      "recurring": 16.9769,
+      "large": 10.6957,
+      "instant": 0.5029,
+      "total": 28.1756,
+      "unmatched": 1.4482,
+      "confirmed": 26.7274
+    },
+    {
+      "date": "2026-07-31",
+      "weekday": 5,
+      "recurring": 18.1476,
+      "large": 3.6424,
+      "instant": 0.3474,
+      "total": 22.1375,
+      "unmatched": 1.0258,
+      "confirmed": 21.1116
+    },
+    {
+      "date": "2026-08-03",
+      "weekday": 1,
+      "recurring": 15.1556,
+      "large": 2.1997,
+      "instant": 0.6138,
+      "total": 17.9691,
+      "unmatched": 1.4265,
+      "confirmed": 16.5427
+    },
+    {
+      "date": "2026-08-04",
+      "weekday": 2,
+      "recurring": 15.5975,
+      "large": 4.6426,
+      "instant": 0.4032,
+      "total": 20.6433,
+      "unmatched": 1.5465,
+      "confirmed": 19.0968
+    },
+    {
+      "date": "2026-08-05",
+      "weekday": 3,
+      "recurring": 16.4755,
+      "large": 1.3794,
+      "instant": 0.4193,
+      "total": 18.2742,
+      "unmatched": 1.372,
+      "confirmed": 16.9022
+    },
+    {
+      "date": "2026-08-06",
+      "weekday": 4,
+      "recurring": 16.3994,
+      "large": 4.0051,
+      "instant": 0.2146,
+      "total": 20.6192,
+      "unmatched": 0.584,
+      "confirmed": 20.0351
+    },
+    {
+      "date": "2026-08-07",
+      "weekday": 5,
+      "recurring": 18.1521,
+      "large": 1.6239,
+      "instant": 0.2753,
+      "total": 20.0512,
+      "unmatched": 1.2796,
+      "confirmed": 18.7716
+    },
+    {
+      "date": "2026-08-10",
+      "weekday": 1,
+      "recurring": 14.9869,
+      "large": 6.5754,
+      "instant": 0.474,
+      "total": 22.0364,
+      "unmatched": 0.9457,
+      "confirmed": 21.0906
+    },
+    {
+      "date": "2026-08-11",
+      "weekday": 2,
+      "recurring": 15.4789,
+      "large": 3.0136,
+      "instant": 0.2434,
+      "total": 18.7359,
+      "unmatched": 0.9883,
+      "confirmed": 17.7477
+    }
+  ]
+}

@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="description" content="分行头寸：OPS 报送、MKTY 审批、GPE 实时闸门与 2 亿日内最低保留">
+<title>分行头寸 · CIPS Sentinel</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="recon.css">
+<link rel="stylesheet" href="tops.css">
+  <link rel="stylesheet" href="light.css">
+</head>
+<body>
+
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+  <symbol id="i-logo" viewBox="0 0 32 32">
+    <path d="M7 22.5V9.5c0-1.1.9-2 2-2h8.5" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+    <path d="M25 9.5v13c0 1.1-.9 2-2 2h-8.5" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" opacity=".55"/>
+    <path d="M11.5 16h9" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <circle cx="7" cy="9.5" r="2" fill="currentColor"/>
+    <circle cx="25" cy="22.5" r="2" fill="currentColor" opacity=".55"/>
+  </symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5v5l3.2 2"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 4l8.5 15h-17L12 4z"/><path d="M12 9.5v4M12 16.5v.5"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2.3 5.7M20 5v6h-6"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v5.5c0 4.6-3 8.2-7 9.5-4-1.3-7-4.9-7-9.5V6l7-3z"/><path d="M9 12l2 2 4-4"/></symbol>
+  <symbol id="i-flow" viewBox="0 0 24 24"><rect x="3" y="4" width="6" height="5" rx="1.5"/><rect x="15" y="15" width="6" height="5" rx="1.5"/><path d="M9 6.5h4a3 3 0 0 1 3 3v5.5M15 17.5h-4a3 3 0 0 1-3-3V9"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/><path d="M12 14.5v2.5"/></symbol>
+  <symbol id="i-bank" viewBox="0 0 24 24"><path d="M4 9l8-4 8 4M5.5 9v9M10 9v9M14 9v9M18.5 9v9M3 20h18"/></symbol>
+</svg>
+
+<div class="app">
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html" aria-label="返回 CIPS Sentinel 首页">
+        <span class="brand-mark"><svg class="icon lg" style="color:var(--jade)"><use href="#i-logo"/></svg></span>
+        <span class="brand-copy"><span class="brand-name">CIPS·SENTINEL</span><span class="brand-sub">跨境流动性智驾舱</span></span>
+      </a>
+      <nav class="nav" aria-label="主导航">
+        <a class="nav-btn" href="index.html">演示模式</a>
+        <a class="nav-btn" href="index.html#cockpit">指挥舱</a>
+        <a class="nav-btn" href="recon.html">CNAPS｜CIPS 对账</a>
+        <a class="nav-btn active" href="tops.html">分行头寸</a>
+        <a class="nav-btn" href="live.html">Agent Console <span class="nav-count">LIVE</span></a>
+      </nav>
+      <div class="topbar-right">
+        <span class="live-pill"><span class="live-dot"></span>GPE · MQ / FILE / API</span>
+        <span class="clock">T日 <b>17:00:12</b></span>
+        <div class="avatar-wrap"><div class="avatar">林</div><div class="avatar-meta"><b>林岚</b><span>MKTY · 授权人</span></div></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="tops-main">
+    <section class="tops-hero">
+      <div class="tops-hero-copy">
+        <div class="tops-kicker">CIPS · BRANCH POSITION <span class="mock-tag">MOCK DATA</span></div>
+        <h1>分行头寸</h1>
+        <p class="tops-lede">OPS 按分行报送头寸，MKTY 统一查看全行加总与各分行可用头寸；分行可加报，MKTY 批准或拒绝；实际执行由资金运营完成。GPE 在支付前实时校验 CIPS 全局余额与 2 亿日内最低保留。</p>
+        <div class="tops-hero-actions">
+          <div class="role-switch" role="group" aria-label="视角切换">
+            <button class="role-btn" data-role="OPS">OPS 视角</button>
+            <button class="role-btn active" data-role="MKTY">MKTY 视角</button>
+          </div>
+          <button class="btn primary" id="addBtn"><svg class="icon sm"><use href="#i-plus"/></svg>加报头寸</button>
+          <span class="role-hint" id="roleHint">MKTY 可审批加报；切换 OPS 可发起加报</span>
+        </div>
+      </div>
+
+      <aside class="gate-card gate-critical" id="gateCard" aria-label="CIPS 实时余额闸门">
+        <div class="gate-head">
+          <div><span class="gate-kicker">CIPS REAL-TIME BALANCE</span><span class="gate-title">日内最低保留闸门</span></div>
+          <span class="gate-badge" id="gateBadge"><svg class="icon xs"><use href="#i-alert"/></svg>PENDING</span>
+        </div>
+        <div class="gate-balance"><span>¥</span><b id="gateBalance">1.82</b><small>亿</small></div>
+        <div class="gate-meta">
+          <div><span>最低保留</span><b>2.00 亿</b></div>
+          <div><span>全局可支付</span><b id="globalAvailable" class="negative">−0.18 亿</b></div>
+        </div>
+        <div class="gate-explain" id="gateExplain"><svg class="icon xs"><use href="#i-alert"/></svg><span>余额低于 2 亿，新增支付进入 GPE PENDING；MKTY 批复不能突破该底线。</span></div>
+        <div class="gate-actions">
+          <button class="btn small primary" id="simulateInflow"><svg class="icon sm"><use href="#i-flow"/></svg>模拟入账 +0.70 亿</button>
+          <button class="btn small ghost" id="resetDemo"><svg class="icon sm"><use href="#i-refresh"/></svg>重置</button>
+        </div>
+      </aside>
+    </section>
+
+    <section class="tops-stats" aria-label="头寸摘要">
+      <div class="stat-card"><span class="stat-label">全行加总头寸</span><b id="statReported">1.77</b><small>亿 · 分行报送</small></div>
+      <div class="stat-card stat-jade"><span class="stat-label">全行可用头寸</span><b id="statAvailable">1.16</b><small>亿 · 各分行加总</small></div>
+      <div class="stat-card stat-amber"><span class="stat-label">待审批加报</span><b id="statPendingAdds">1</b><small id="statPendingAddsSub">笔 · 0.05 亿</small></div>
+      <div class="stat-card stat-red"><span class="stat-label">GPE PENDING</span><b id="statPendingPays">3</b><small id="statPendingPaysSub">笔 · 0.42 亿</small></div>
+      <div class="stat-card"><span class="stat-label">CIPS 实时余额</span><b id="statCips">1.82</b><small>亿 · 17:00:12</small></div>
+    </section>
+
+    <section class="filter-panel panel">
+      <div class="filter-head"><div><div class="panel-kicker">POSITION SEARCH</div><h2>头寸查询</h2></div><span class="filter-note">金额单位：亿元 · 数据日期 2026-08-11</span></div>
+      <div class="filter-row">
+        <label class="field"><span>分行号 / 名称</span><input id="branchFilter" type="text" placeholder="如 001 / 北京"></label>
+        <label class="field"><span>头寸类型</span><select id="typeFilter"><option value="all">全部头寸类型</option><option value="报送头寸">报送头寸</option><option value="加报头寸">加报头寸</option></select></label>
+        <label class="field"><span>头寸日期 from</span><input id="dateFrom" type="date" value="2026-08-01"></label>
+        <label class="field"><span>头寸日期 to</span><input id="dateTo" type="date" value="2026-08-11"></label>
+        <div class="filter-actions"><button class="btn primary" id="queryBtn"><svg class="icon sm"><use href="#i-search"/></svg>查询</button><button class="btn ghost" id="resetFilters">重置</button></div>
+      </div>
+    </section>
+
+    <section class="tops-workspace">
+      <div class="panel table-panel">
+        <div class="panel-head table-head">
+          <div><div class="panel-kicker">BRANCH POSITION LEDGER</div><h2>分行头寸明细</h2></div>
+          <span class="table-count" id="tableCount">6 个分行 · 1 笔加报</span>
+        </div>
+        <div class="table-wrap">
+          <table class="tops-table">
+            <thead><tr><th>分行号</th><th>头寸日期</th><th class="ta-r">头寸金额</th><th class="ta-r">大额发生额</th><th class="ta-r">小额发生额</th><th class="ta-r">清算金额</th><th class="ta-r">轧差金额</th><th class="ta-r">可用头寸金额</th><th>状态</th><th>执行状态</th><th>操作</th></tr></thead>
+            <tbody id="branchRows"></tbody>
+          </table>
+        </div>
+        <div class="table-foot"><span><svg class="icon xs"><use href="#i-shield"/></svg>可用头寸 = 头寸金额 + 批准加报 − 已清算 − 在途/冻结；大额/小额为发生额，不重复扣减。</span><span class="mono">GPE · realtime gate</span></div>
+      </div>
+
+      <aside class="tops-side">
+        <div class="panel add-panel">
+          <div class="panel-head"><div><div class="panel-kicker">ADDITIONAL POSITION</div><h2>加报头寸审批</h2></div><span class="status-pill review" id="addCount">1 待审批</span></div>
+          <div id="addRequests" class="add-requests"></div>
+          <p class="side-note"><svg class="icon xs"><use href="#i-alert"/></svg>MKTY 批准加报只代表审批通过；实际额度执行由资金运营完成。若 CIPS 余额低于 2 亿，实际支付仍 PENDING。</p>
+        </div>
+
+        <div class="panel pending-panel">
+          <div class="panel-head"><div><div class="panel-kicker">GPE QUEUE</div><h2>PENDING 支付</h2></div><span class="status-pill unmatched" id="pendingPaysCount">3 笔</span></div>
+          <div id="pendingPayments" class="pending-list"></div>
+          <div class="side-note side-note-amber"><svg class="icon xs"><use href="#i-alert"/></svg><span>PENDING 原因：CIPS_FLOOR_BREACH。余额恢复后由 GPE 重试，不会自动跳过闸门。</span></div>
+        </div>
+
+        <div class="panel rule-panel">
+          <div class="panel-head"><div><div class="panel-kicker">LIQUIDITY GATE</div><h2>闸门规则</h2></div></div>
+          <div class="rule-formula"><code>全局可支付 = CIPS 余额 − 2.00 亿 − 预留</code><code>支付通过 = 分行可用 ≥ 金额 且 全局可支付 ≥ 金额</code></div>
+          <p class="side-note"><svg class="icon xs"><use href="#i-check"/></svg>MKTY 批复 = 业务授权；CIPS 余额 = 执行约束。批复不能突破 2 亿底线。</p>
+        </div>
+      </aside>
+    </section>
+
+  </main>
+
+  <footer class="footer"><div class="footer-left"><span class="footer-dot"></span><span>CIPS Sentinel · 分行头寸 · Mock 演示数据，不构成真实交易建议</span></div><div class="footer-right"><span><svg class="icon xs"><use href="#i-shield"/></svg>2 亿日内最低保留</span><span><svg class="icon xs"><use href="#i-lock"/></svg>MKTY 批复不等于放行</span></div></footer>
+</div>
+
+<div class="modal-backdrop" id="addModal" aria-hidden="true">
+  <div class="modal add-modal" role="dialog" aria-modal="true" aria-labelledby="addModalTitle">
+    <div class="modal-head"><div><div class="panel-kicker">OPS · ADDITIONAL POSITION</div><h2 id="addModalTitle">加报头寸</h2></div><button class="drawer-close" id="addClose" aria-label="关闭"><svg class="icon"><use href="#i-close"/></svg></button></div>
+    <form id="addForm" class="modal-body">
+      <div class="form-grid">
+        <label class="field"><span>分行</span><select id="addBranch" required></select></label>
+        <label class="field"><span>加报金额（亿元）</span><input id="addAmount" type="number" min="0.01" step="0.01" placeholder="如 0.05" required></label>
+      </div>
+      <label class="field"><span>加报原因</span><textarea id="addReason" rows="3" placeholder="例如：下午跨境付款集中，预计清算量增加" required></textarea></label>
+      <div class="modal-actions"><button type="button" class="btn ghost" id="addCancel">取消</button><button type="submit" class="btn primary">提交加报</button></div>
+    </form>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="tops.js"></script>
+</body>
+</html>

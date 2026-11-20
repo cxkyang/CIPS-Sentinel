@@ -1,0 +1,10 @@
+.env.local
+.env
+.git
+.gitignore
+node_modules
+__pycache__
+.DS_Store
+.dsh-office.*
+qa
+qa-ui

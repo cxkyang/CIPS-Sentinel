@@ -1,0 +1,16 @@
+{
+  "name": "cips-sentinel",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CIPS Sentinel — cross-border liquidity multi-step agent demo",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node server.mjs",
+    "forecast:snapshot": "node forecast/build-snapshot.mjs",
+    "forecast:backtest": "node forecast/backtest.mjs",
+    "cnaps:trend": "node forecast/cnaps-inflow-engine.mjs"
+  }
+}

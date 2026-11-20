@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="description" content="CIPS Sentinel · CNAPS｜CIPS 对账：外部清算流水与行内现金流的自动匹配、差异解释与未匹配标记">
+<title>CNAPS｜CIPS 对账 · CIPS Sentinel</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="recon.css">
+  <link rel="stylesheet" href="light.css">
+</head>
+<body>
+
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+  <symbol id="i-logo" viewBox="0 0 32 32">
+    <path d="M7 22.5V9.5c0-1.1.9-2 2-2h8.5" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+    <path d="M25 9.5v13c0 1.1-.9 2-2 2h-8.5" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" opacity=".55"/>
+    <path d="M11.5 16h9" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <circle cx="7" cy="9.5" r="2" fill="currentColor"/>
+    <circle cx="25" cy="22.5" r="2" fill="currentColor" opacity=".55"/>
+  </symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></symbol>
+  <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2.3 5.7M20 5v6h-6"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 4l8.5 15h-17L12 4z"/><path d="M12 9.5v4M12 16.5v.5"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-flow" viewBox="0 0 24 24"><rect x="3" y="4" width="6" height="5" rx="1.5"/><rect x="15" y="15" width="6" height="5" rx="1.5"/><path d="M9 6.5h4a3 3 0 0 1 3 3v5.5M15 17.5h-4a3 3 0 0 1-3-3V9"/></symbol>
+  <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 4v16M7 20h10"/><path d="M5 7h14M5 7l-2.5 6h5L5 7zM19 7l-2.5 6h5L19 7z"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5v5l3.2 2"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v5.5c0 4.6-3 8.2-7 9.5-4-1.3-7-4.9-7-9.5V6l7-3z"/><path d="M9 12l2 2 4-4"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></symbol>
+  <symbol id="i-wand" viewBox="0 0 24 24"><path d="M4 20L15.5 8.5"/><path d="M14 4l1 2.5L17.5 8 15 9l-1 2.5L13 9l-2.5-1L13 6.5 14 4z"/><path d="M19 14l.7 1.8 1.8.7-1.8.7L19 19l-.7-1.8-1.8-.7 1.8-.7L19 14z"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3.5h8l5 5v12H6v-17z"/><path d="M14 3.5v5h5M9 13h7M9 16.5h5"/></symbol>
+</svg>
+
+<div class="app">
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html" aria-label="返回 CIPS Sentinel 首页">
+        <span class="brand-mark"><svg class="icon lg" style="color:var(--jade)"><use href="#i-logo"/></svg></span>
+        <span class="brand-copy"><span class="brand-name">CIPS·SENTINEL</span><span class="brand-sub">跨境流动性智驾舱</span></span>
+      </a>
+      <nav class="nav" aria-label="主导航">
+        <a class="nav-btn" href="index.html">演示模式</a>
+        <a class="nav-btn" href="index.html#cockpit">指挥舱</a>
+        <a class="nav-btn active" href="recon.html">CNAPS｜CIPS 对账</a>
+        <a class="nav-btn" href="tops.html">分行头寸</a>
+        <a class="nav-btn" href="live.html">Agent Console <span class="nav-count">LIVE</span></a>
+      </nav>
+      <div class="topbar-right">
+        <span class="live-pill"><span class="live-dot"></span>对账演示 · MOCK</span>
+        <span class="clock">T日 <b>17:00:12</b></span>
+        <div class="avatar-wrap"><div class="avatar">林</div><div class="avatar-meta"><b>林岚</b><span>MKTY · 授权人</span></div></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="recon-main">
+    <div class="channel-switch" role="tablist" aria-label="对账通道">
+      <button class="channel-btn active" data-channel="CNAPS" role="tab">CNAPS 对账 <span id="cnapsTabCount">10</span></button>
+      <button class="channel-btn" data-channel="CIPS" role="tab">CIPS 对账 <span id="cipsTabCount">8</span></button>
+    </div>
+
+    <section class="recon-hero">
+      <div class="recon-hero-copy">
+        <div class="recon-kicker" id="channelKicker">GMO · RECONCILIATION · CNAPS × CASH FLOW <span class="mock-tag">MOCK DATA</span></div>
+        <p class="recon-lede">外部清算流水 × 行内现金流。Agent 自动对齐金额、日期、账号与报文，标出已匹配、未匹配和需人工复核的每一笔。</p>
+        <div class="recon-actions">
+          <button class="btn primary" id="runBtn"><svg class="icon sm"><use href="#i-wand"/></svg>运行 Agent 对账</button>
+          <span class="recon-run-state" id="runState"><span class="dot"></span><b>等待运行</b><span>· 10 笔样本</span></span>
+        </div>
+        <p class="recon-disclaimer">演示数据为 mock，客户名称与账号已脱敏；字段结构参考 CNAPS/HVPS 清算清单与行内现金流底账，不代表生产数据。</p>
+      </div>
+
+      <div class="recon-hero-cards" id="cnapsHeroCards">
+        <aside class="intake-card outflow-card" aria-label="客户往账汇总">
+          <div class="intake-head">
+            <div><span class="intake-kicker">OUTFLOW BRIDGE · CNAPS</span><span class="intake-title">今日客户往账口径 · 全量</span></div>
+            <span class="intake-badge">CNAPS</span>
+          </div>
+          <div class="intake-total"><span>¥</span><b>18.62</b><small>亿</small></div>
+          <div class="intake-components">
+            <span>大额往账 <b>14.20 亿</b></span>
+            <span>小额往账 <b>4.42 亿</b></span>
+          </div>
+          <div class="intake-bridge">
+            <div class="bridge-row"><span>全量客户往账</span><b>18.62 亿</b></div>
+            <div class="bridge-row bridge-minus"><span>未匹配 / 待复核（往账）</span><b>− 1.42 亿</b></div>
+            <div class="bridge-row bridge-total"><span>已确认客户往账</span><b>17.20 亿</b></div>
+          </div>
+          <p class="intake-note"><svg class="icon xs"><use href="#i-alert"/></svg>全量口径，非下方 10 笔样本合计；未匹配往账不进入已确认往账。</p>
+        </aside>
+
+        <aside class="intake-card" aria-label="来账汇总">
+          <div class="intake-head">
+            <div><span class="intake-kicker">INFLOW BRIDGE · CNAPS</span><span class="intake-title">今日来账口径 · 全量</span></div>
+            <span class="intake-badge">CNAPS</span>
+          </div>
+          <div class="intake-total"><span>¥</span><b>24.00</b><small>亿</small></div>
+          <div class="intake-components">
+            <span>大额来账 <b>23.60 亿</b></span>
+            <span>即时转账 <b>0.40 亿</b></span>
+          </div>
+          <div class="intake-bridge">
+            <div class="bridge-row"><span>全量来账</span><b>24.00 亿</b></div>
+            <div class="bridge-row bridge-minus"><span>未匹配 / 待复核（来账）</span><b>− 2.40 亿</b></div>
+            <div class="bridge-row bridge-total"><span>已确认可用流入</span><b>21.60 亿</b></div>
+          </div>
+          <p class="intake-note"><svg class="icon xs"><use href="#i-alert"/></svg>全量口径，非下方 10 笔样本合计；未匹配流出 -59.99 亿单独进入预留池。</p>
+        </aside>
+      </div>
+
+      <aside class="intake-card cips-net-card" id="cipsNetCard" hidden aria-label="CIPS 未匹配净额">
+        <div class="intake-head">
+          <div><span class="intake-kicker">CIPS · UNMATCHED NET</span><span class="intake-title">CIPS 未匹配净额</span></div>
+          <span class="intake-badge">CIPS</span>
+        </div>
+        <div class="intake-total"><span>¥</span><b id="cipsNetTotal">−0.33</b><small>亿</small></div>
+        <div class="intake-components">
+          <span>未匹配汇入 <b id="cipsNetIn">0.18 亿</b></span>
+          <span>未匹配汇出 <b id="cipsNetOut">0.51 亿</b></span>
+        </div>
+        <div class="intake-bridge">
+          <div class="bridge-row"><span>未匹配汇入</span><b id="cipsBridgeIn">+0.18 亿</b></div>
+          <div class="bridge-row bridge-minus"><span>未匹配汇出</span><b id="cipsBridgeOut">−0.51 亿</b></div>
+          <div class="bridge-row bridge-total"><span>未匹配净额</span><b id="cipsBridgeNet">−0.33 亿</b></div>
+        </div>
+        <p class="intake-note"><svg class="icon xs"><use href="#i-alert"/></svg>待复核 <b id="cipsReviewTotal">0.33 亿</b> 单独列示，不计入未匹配净额。</p>
+      </aside>
+    </section>
+
+    <section class="recon-stats" aria-label="对账摘要">
+      <div class="stat-card stat-jade"><span class="stat-label">已匹配</span><b id="statMatched">—</b><small>笔 · MATCHED</small></div>
+      <div class="stat-card stat-amber"><span class="stat-label">待复核</span><b id="statReview">—</b><small>笔 · REVIEW</small></div>
+      <div class="stat-card stat-red"><span class="stat-label">未匹配</span><b id="statUnmatched">—</b><small><span id="statUnmatchedTx">0</span> 交易无账 · <span id="statUnmatchedCash">0</span> 单边账</small></div>
+      <div class="stat-card"><span class="stat-label">自动处理率</span><b id="statRate">—</b><small>已匹配 + 待复核 / 样本</small></div>
+      <div class="stat-card"><span class="stat-label">对账耗时</span><b id="statTime">—</b><small>目标 &lt; 30s</small></div>
+    </section>
+
+    <section class="coverage-card panel" id="cnapsCoverageCard" aria-label="TREATS 与 CNAPS 记录及支付覆盖">
+      <div class="coverage-head">
+        <div><div class="panel-kicker">TREATS × CNAPS · PAYMENT COVERAGE</div><h2>应付 vs 实付</h2></div>
+        <span class="coverage-diff">差额 <b>0.18 亿</b></span>
+      </div>
+      <div class="coverage-grid">
+        <div class="coverage-metric"><span>TREATS 记录</span><b>1,284</b><small>笔</small></div>
+        <div class="coverage-metric"><span>CNAPS 记录</span><b>1,296</b><small>笔</small></div>
+        <div class="coverage-metric"><span>合计记录</span><b>2,580</b><small>笔</small></div>
+        <div class="coverage-metric coverage-money"><span>应支付金额</span><b>21.60</b><small>亿</small></div>
+        <div class="coverage-metric coverage-money"><span>实际支付金额</span><b>21.42</b><small>亿</small></div>
+        <div class="coverage-metric coverage-diff-cell"><span>未支付 / 差额</span><b>0.18</b><small>亿</small></div>
+      </div>
+      <p class="coverage-note">TREATS 记录来自行内支付指令，CNAPS 记录来自外部清算报文；差额需通过匹配与人工复核确认，不等于最终损失。</p>
+    </section>
+
+    <section class="recon-workspace">
+      <div class="panel table-panel">
+        <div class="panel-head table-head">
+          <div>
+            <div class="panel-kicker" id="tableKicker">MATCH LEDGER · 10 RECORDS</div>
+            <h2>交易明细</h2>
+          </div>
+          <div class="filter-group" role="tablist" aria-label="匹配状态筛选">
+            <button class="filter-btn active" data-filter="all">全部 <span id="countAll">10</span></button>
+            <button class="filter-btn" data-filter="matched">已匹配 <span id="countMatched">0</span></button>
+            <button class="filter-btn" data-filter="review">待复核 <span id="countReview">0</span></button>
+            <button class="filter-btn" data-filter="unmatched">未匹配 <span id="countUnmatched">0</span></button>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table class="recon-table">
+            <thead>
+              <tr><th>来源</th><th>业务编号</th><th>日期</th><th>付款人 / 收款人</th><th class="ta-r">金额</th><th>业务类型</th><th>Agent 判定</th><th>清算状态</th><th>置信度</th></tr>
+            </thead>
+            <tbody id="reconRows"></tbody>
+          </table>
+        </div>
+        <div class="table-foot">
+          <span><svg class="icon xs"><use href="#i-eye"/></svg>点击任意行，查看 CNAPS 原始字段与行内现金流字段</span>
+          <span class="mono" id="tableFootState">待 Agent 运行</span>
+        </div>
+      </div>
+
+      <aside class="recon-side">
+        <div class="panel agent-panel">
+          <div class="panel-head">
+            <div class="panel-kicker">AGENT TRACE</div>
+            <h2>对账过程</h2>
+          </div>
+          <div class="agent-status-row"><span class="agent-orb"><svg class="icon sm"><use href="#i-flow"/></svg></span><div><b id="agentState">等待运行</b><span id="agentSub">读取 4 类源数据</span></div><span class="agent-time" id="agentTime">—</span></div>
+          <div class="progress"><span id="progressBar"></span></div>
+          <ol class="agent-steps" id="agentSteps">
+            <li class="agent-step" data-step="1"><i>01</i><div><b>读取源数据</b><span>大额来账 / 往账 / 即时转账 / 行内现金流</span></div><em>待</em></li>
+            <li class="agent-step" data-step="2"><i>02</i><div><b>字段标准化</b><span>金额、日期、账号、户名、方向、报文号</span></div><em>待</em></li>
+            <li class="agent-step" data-step="3"><i>03</i><div><b>规则匹配</b><span>金额 + 日期 + 账号 + 户名 + 报文号</span></div><em>待</em></li>
+            <li class="agent-step" data-step="4"><i>04</i><div><b>状态标记</b><span>MATCHED / REVIEW / UNMATCHED</span></div><em>待</em></li>
+            <li class="agent-step" data-step="5"><i>05</i><div><b>差异解释</b><span>生成匹配证据与人工复核建议</span></div><em>待</em></li>
+          </ol>
+          <div class="agent-note" id="agentNote">Agent 将优先使用金额、日期、账号和报文号做确定性匹配；金额差异大或户名不一致时，转人工复核。</div>
+        </div>
+
+        <div class="panel match-panel">
+          <div class="panel-head">
+            <div class="panel-kicker">MANUAL MATCH · SAMPLE</div>
+            <h2>一对多匹配</h2>
+          </div>
+          <div class="match-map">
+            <code>NET262229970</code>
+            <span class="match-arrow">→</span>
+            <div><code>2026081119336598</code><code>2026081186068231</code><code>20260811124615936</code></div>
+          </div>
+          <p class="match-copy">行内一笔净额现金流，对应来账、往账、即时转账三笔 CNAPS 报文。Agent 识别为候选，但因金额差异大，标记为 <b>待复核</b>。</p>
+        </div>
+
+        <div class="panel rule-panel">
+          <div class="panel-head">
+            <div class="panel-kicker">MATCH RULES</div>
+            <h2>匹配依据</h2>
+          </div>
+          <div class="rule-chips">
+            <span>金额精确到分</span><span>起息日一致</span><span>账号 / 户名</span><span>报文标识号</span><span>借贷方向</span><span>一对多净额</span>
+          </div>
+          <div class="rule-note"><svg class="icon xs"><use href="#i-shield"/></svg><span>未匹配和待复核项不得直接计入可用头寸，必须人工确认。</span></div>
+        </div>
+      </aside>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-left"><span class="footer-dot"></span><span>CIPS Sentinel · CNAPS｜CIPS 对账工作台 · Mock 演示数据，客户名称与账号已脱敏，不构成真实交易建议</span></div>
+    <div class="footer-right"><span><svg class="icon xs"><use href="#i-shield"/></svg>未匹配项默认人工复核</span><span><svg class="icon xs"><use href="#i-clock"/></svg>字段口径待业务确认</span></div>
+  </footer>
+</div>
+
+<div class="drawer-backdrop" id="drawerBackdrop" aria-hidden="true"></div>
+<aside class="drawer" id="drawer" aria-hidden="true" aria-label="对账明细">
+  <div class="drawer-head">
+    <div><div class="panel-kicker" id="drawerKicker">MATCH DETAIL</div><h2 id="drawerTitle">交易明细</h2></div>
+    <button class="drawer-close" id="drawerClose" aria-label="关闭"><svg class="icon"><use href="#i-close"/></svg></button>
+  </div>
+  <div class="drawer-body">
+    <div class="drawer-summary" id="drawerSummary"></div>
+
+    <section class="candidate-panel" id="candidatePanel" hidden>
+      <div class="candidate-head">
+        <div><span class="candidate-title">同金额候选交易</span><span class="candidate-count" id="candidateCount"></span></div>
+        <span class="candidate-hint">同金额可能多笔，需人工确认</span>
+      </div>
+      <div class="candidate-list" id="candidateList"></div>
+      <div class="candidate-actions"><button class="btn primary" id="confirmMatch" disabled>确认匹配</button></div>
+    </section>
+
+    <div class="drawer-grid">
+      <section class="raw-panel"><div class="raw-head"><span id="rawTitle">CNAPS 原始字段</span><span class="mono" id="rawSource"></span></div><dl class="raw-list" id="rawList"></dl></section>
+      <section class="raw-panel"><div class="raw-head"><span>行内现金流字段</span><span class="mono">CASH FLOW</span></div><dl class="raw-list" id="cashList"></dl></section>
+    </div>
+    <section class="evidence-panel">
+      <div class="raw-head"><span>Agent 判定</span><span class="status-pill" id="drawerStatus"></span></div>
+      <div id="evidenceList" class="evidence-list"></div>
+      <p class="evidence-reason" id="evidenceReason"></p>
+    </section>
+  </div>
+</aside>
+
+<div class="drawer-backdrop" id="trendBackdrop" aria-hidden="true"></div>
+<aside class="drawer trend-drawer" id="trendDrawer" aria-hidden="true" aria-label="CNAPS 来账趋势与预测">
+  <div class="drawer-head">
+    <div><div class="panel-kicker">CNAPS INFLOW · TREND & FORECAST</div><h2>来账历史趋势与 5 日预测</h2></div>
+    <button class="drawer-close" id="trendClose" aria-label="关闭"><svg class="icon"><use href="#i-close"/></svg></button>
+  </div>
+  <div class="drawer-body trend-body">
+    <div class="trend-tabs" role="tablist" aria-label="趋势范围">
+      <button class="trend-tab active" data-trend-range="3M">3 个月</button>
+      <button class="trend-tab" data-trend-range="6M">6 个月</button>
+      <button class="trend-tab" data-trend-range="forecast">5 日预测</button>
+      <button class="trend-tab" data-trend-range="customers">客户机会</button>
+    </div>
+    <div class="trend-kpis" id="trendKpis"></div>
+    <div class="trend-chart"><svg id="trendChart" viewBox="0 0 820 240" role="img" aria-label="CNAPS 来账历史趋势与预测"></svg></div>
+    <div class="trend-legend" id="trendLegend"></div>
+    <div class="trend-segments" id="trendSegments"></div>
+    <div class="trend-forecast" id="trendForecast"></div>
+    <div class="trend-customers" id="trendCustomers" hidden></div>
+    <p class="trend-note" id="trendNote">沙盘历史 + 星期效应 + 残差 bootstrap；不是生产预测。</p>
+  </div>
+</aside>
+
+<div class="recon-toast" id="reconToast" role="status" aria-live="polite"></div>
+
+<script src="forecast/cnaps-inflow-snapshot.js"></script>
+<script src="recon.js"></script>
+</body>
+</html>

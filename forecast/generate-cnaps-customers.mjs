@@ -1,0 +1,23 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+// Anonymized sample customers; not real customer data.
+const customers = [
+  { id:'CUST-018', segment:'大额客户', inflow3m:4.82, inflow6m:9.16, avgBalance:1.24, volatility:'高', products:['结算'], opportunity:'贸易融资 / FX', type:'交叉销售', score:94, rationale:'大额低频，仅使用结算，存在贸易融资与结售汇机会' },
+  { id:'CUST-006', segment:'经常性客户', inflow3m:3.16, inflow6m:6.08, avgBalance:0.86, volatility:'低', products:['结算','存款'], opportunity:'现金管理升级', type:'AUM', score:88, rationale:'稳定高频来账，当前仅使用基础存款，可升级现金管理' },
+  { id:'CUST-031', segment:'即时转账', inflow3m:0.62, inflow6m:1.21, avgBalance:0.08, volatility:'中', products:['收款'], opportunity:'收单 / 获客', type:'获客', score:85, rationale:'高频小额收款，未使用收单与跨境支付产品，适合同类客户拓展' },
+  { id:'CUST-041', segment:'大额客户', inflow3m:2.94, inflow6m:5.72, avgBalance:2.05, volatility:'低', products:['结算','存款'], opportunity:'资金配置 / 定存', type:'AUM', score:82, rationale:'余额沉淀高、波动低，可配置短期存款或理财' },
+  { id:'CUST-012', segment:'经常性客户', inflow3m:1.88, inflow6m:3.42, avgBalance:0.31, volatility:'低', products:['结算'], opportunity:'现金管理', type:'交叉销售', score:76, rationale:'稳定来账但产品单一，适合现金管理与自动归集' },
+  { id:'CUST-027', segment:'大额客户', inflow3m:1.46, inflow6m:2.62, avgBalance:0.44, volatility:'高', products:['结算'], opportunity:'流动性备付 / 授信', type:'风险管理', score:73, rationale:'大额波动明显，结算余额偏低，存在备付与授信需求' }
+];
+const summary = {
+  sample_customers: customers.length,
+  followups: customers.filter(c=>c.score>=70).length,
+  aum_potential_yi: Number(customers.filter(c=>c.type==='AUM').reduce((s,c)=>s+c.avgBalance*0.5,0).toFixed(2)),
+  low_penetration: customers.filter(c=>c.products.length<=1).length,
+  top_opportunity: '贸易融资 / FX'
+};
+fs.writeFileSync(path.join(__dirname,'cnaps-customer-opportunities.json'),JSON.stringify({note:'Anonymized sandbox customer opportunities; no PII.', summary, customers},null,2));
+console.log(JSON.stringify(summary,null,2));

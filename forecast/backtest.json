@@ -1,0 +1,10 @@
+{
+  "model_version": "forecast-v0.1-seasonal-bootstrap",
+  "train_days": 60,
+  "test_days": 20,
+  "test_rows": 660,
+  "mae": 0.0845,
+  "pinball_p72": 0.0438,
+  "coverage_p72": 0.711,
+  "generated_at": "2026-11-17T08:24:43.458Z"
+}

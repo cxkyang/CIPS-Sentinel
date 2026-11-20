@@ -1,0 +1,757 @@
+/* ============================================================
+   CIPS Sentinel · Light theme
+   HSBC-inspired: white surfaces, HSBC red accents, ink text
+   Loaded after page CSS to override the dark editorial theme.
+   ============================================================ */
+
+:root{
+  --bg:#F4F7FA;
+  --bg-2:#FFFFFF;
+  --bg-3:#EDF2F7;
+  --panel:#FFFFFF;
+  --panel-2:#F8FAFC;
+  --panel-3:#EEF3F8;
+  --line:#DCE5EE;
+  --line-2:#C8D4E2;
+  --line-3:#AEBCCB;
+  --text:#0F172A;
+  --text-2:#475569;
+  --text-3:#64748B;
+  --text-4:#94A3B8;
+  --jade:#0B7A63;
+  --jade-2:#0E8A70;
+  --jade-3:#E7F5F1;
+  --amber:#B45309;
+  --amber-2:#D97706;
+  --amber-3:#FEF3C7;
+  --blue:#1D4ED8;
+  --blue-2:#1E40AF;
+  --red:#DB0011;
+  --red-2:#9F000C;
+  --violet:#7C3AED;
+  --radius:14px;
+  --radius-sm:10px;
+}
+
+html{color-scheme:light}
+body{
+  background:var(--bg);
+  color:var(--text);
+}
+body::before{
+  background:
+    radial-gradient(1100px 620px at 8% -8%, rgba(219,0,17,.045), transparent 62%),
+    radial-gradient(1000px 560px at 92% 0%, rgba(29,78,216,.035), transparent 64%),
+    linear-gradient(180deg,#F7F9FC 0%,#F4F7FA 48%,#F4F7FA 100%);
+}
+body::after{
+  background-image:
+    linear-gradient(rgba(15,23,42,.028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15,23,42,.028) 1px, transparent 1px);
+  opacity:.42;
+}
+::-webkit-scrollbar-thumb{background:#CBD5E1}
+::-webkit-scrollbar-thumb:hover{background:#94A3B8}
+
+/* top navigation */
+.topbar{
+  background:rgba(255,255,255,.94);
+  border-bottom:1px solid #E2E8F0;
+  box-shadow:0 1px 12px rgba(15,23,42,.04);
+}
+.brand-mark{
+  background:#FFF1F2;
+  border-color:#FCA5A5;
+  color:#DB0011;
+  box-shadow:none;
+}
+.brand-name{color:#0F172A}
+.brand-sub{color:#64748B}
+.nav-btn{color:#475569}
+.nav-btn:hover{color:#0F172A;background:#F1F5F9}
+.nav-btn.active{color:#DB0011;background:#FFF1F2}
+.nav-btn.active::after{background:#DB0011;box-shadow:none}
+.nav-btn .nav-count{background:#FFF1F2;color:#DB0011}
+.live-pill{background:#FFF1F2;border-color:#FCA5A5;color:#DB0011}
+.live-dot{background:#DB0011;box-shadow:none}
+.clock{color:#475569}
+.clock b{color:#0F172A}
+.avatar{color:#fff;background:linear-gradient(145deg,#DB0011,#9F000C);border:none}
+.avatar-meta b{color:#0F172A}
+.avatar-meta span{color:#64748B}
+
+/* common surfaces */
+.card,.kpi,.goal-card,.stat-card,.panel,.filter-panel,.table-panel,
+.intake-card,.gate-card,.cips-net-card,.agent-panel,.pending-panel,
+.add-panel,.rule-panel,.coverage-card,.bottom-card,.bottom-card-amber,
+.live-control,.live-trace,.approval-card,.trace-card,
+.drawer,.modal,.add-modal,.preset,.option,.step,.result-panel,
+.approval-log,.health-box,.contract-list,.sum-card,.raw-panel,
+.evidence-panel,.match-panel,.rule-panel,.pending-item,.add-item{
+  background:#FFFFFF !important;
+  border-color:#E2E8F0 !important;
+  box-shadow:0 10px 28px rgba(15,23,42,.055) !important;
+}
+.card-head,.queue-block,.recon-summary,.drawer-head,.modal-head{
+  border-color:#E2E8F0 !important;
+}
+.card-sub,.queue-note,.recon-disclaimer,.agent-note,.intake-note{
+  color:#64748B !important;
+}
+.card-link{color:#475569}
+.card-link:hover{color:#DB0011}
+
+/* hero type */
+.hero-lede,.tops-lede,.recon-lede,.live-lede,.page-desc{color:#475569}
+.hero-title,.tops-hero h1,.recon-hero h1,.page-title,.live-title{color:#0F172A}
+.hero-kicker,.tops-kicker,.recon-kicker,.page-kicker,.live-label{color:#DB0011}
+.hero-kicker::before,.tops-kicker::before,.recon-kicker::before{background:#DB0011;box-shadow:none}
+.page-actions .btn.ghost,.hero-actions .btn.ghost{background:#fff;color:#334155;border-color:#CBD5E1}
+.page-actions .btn.ghost:hover,.hero-actions .btn.ghost:hover{background:#F8FAFC;color:#0F172A;border-color:#94A3B8}
+
+/* buttons */
+.btn.primary{
+  color:#fff;
+  background:#DB0011;
+  box-shadow:0 8px 20px rgba(219,0,17,.18),inset 0 1px 0 rgba(255,255,255,.2);
+}
+.btn.primary:hover{box-shadow:0 12px 26px rgba(219,0,17,.24)}
+.btn.ghost{color:#334155;border-color:#CBD5E1;background:#fff}
+.btn.ghost:hover{color:#0F172A;border-color:#94A3B8;background:#F8FAFC}
+
+/* cards */
+.card{
+  background:#FFFFFF !important;
+  border:1px solid #E2E8F0 !important;
+}
+.kpi{
+  background:#FFFFFF !important;
+  border-color:#E2E8F0 !important;
+  box-shadow:0 8px 22px rgba(15,23,42,.045) !important;
+}
+.kpi:hover{background:#FFFFFF !important;border-color:#C8D4E2 !important}
+.kpi-label{color:#475569}
+.kpi-value .v{color:#0F172A}
+.kpi-value .cur,.kpi-value .u{color:#64748B}
+.kpi-foot{color:#64748B}
+.kpi-flag{background:#F1F5F9}
+.flag-safe{color:#0B7A63;background:#E7F5F1;border-color:#B7E4D6}
+.flag-warn{color:#B45309;background:#FEF3C7;border-color:#FDE68A}
+.flag-neutral{color:#475569;background:#F1F5F9;border-color:#E2E8F0}
+
+/* goal contract */
+.goal-card{
+  background:#FFFFFF !important;
+  border-color:#E2E8F0 !important;
+}
+.goal-card::before{background:linear-gradient(90deg,rgba(219,0,17,.55),rgba(219,0,17,0))}
+.goal-kicker,.goal-id{color:#64748B}
+.goal-row dt{color:#64748B}
+.goal-row dd{color:#475569}
+.goal-row dd b{color:#0F172A}
+.goal-tags{border-top-color:#E2E8F0}
+.goal-tag{background:#F8FAFC;border-color:#E2E8F0;color:#475569}
+
+/* dual ledger */
+.dual-body{background:transparent}
+.ledger{background:#F8FAFC !important;border-color:#E2E8F0 !important}
+.ledger.cips{background:linear-gradient(180deg,#F0FBF7,#FFFFFF) !important;border-color:#BFE8DB !important}
+.ledger.treats{background:linear-gradient(180deg,#FFF8ED,#FFFFFF) !important;border-color:#FDE3B3 !important}
+.ledger-role{border-color:#E2E8F0;color:#64748B;background:#fff}
+.ledger-delta{color:#64748B}
+.ledger-bar{background:#E8EEF4}
+.ledger-bar i{background:#94A3B8}
+.ledger-stat span{color:#64748B}
+.bridge-line{background:#DCE5EE}
+.bridge-time{color:#94A3B8}
+.queue-block{border-top-color:#E2E8F0}
+.queue-title{color:#475569}
+.queue-note{color:#64748B}
+
+/* tables */
+.table-wrap{background:transparent}
+table.data th,.recon-table th,.tops-table th{
+  background:#F8FAFC !important;
+  color:#64748B !important;
+  border-bottom-color:#E2E8F0 !important;
+}
+table.data td,.recon-table td,.tops-table td{
+  color:#334155 !important;
+  border-bottom-color:#EEF2F6 !important;
+}
+.recon-table tbody tr:hover,.tops-table tbody tr:hover{background:#F8FAFC !important}
+table.data td.num{color:#0F172A}
+.compare-table td.cips-cell{color:#0B7A63 !important}
+.compare-table td.treats-cell{color:#B45309 !important}
+.compare-table .dim-row td{background:#FAFBFC !important}
+
+/* status chips and small surfaces */
+.status-pill,.type-tag,.source-tag,.rule-chips span,.coverage-metric,
+.trace-tag,.tool-status,.pill,.tag{
+  border-color:#E2E8F0 !important;
+}
+.status-pill.matched,.status-pill.approved,.status-pill.normal,.pill.ok{
+  background:#E7F5F1 !important;border-color:#B7E4D6 !important;color:#0B7A63 !important;
+}
+.status-pill.review,.status-pill.wait,.pill.wait{
+  background:#FEF3C7 !important;border-color:#FDE68A !important;color:#B45309 !important;
+}
+.status-pill.unmatched,.status-pill.pending-pay,.pill.risk{
+  background:#FFF1F2 !important;border-color:#FCA5A5 !important;color:#DB0011 !important;
+}
+.status-pill.pending{background:#F1F5F9 !important;color:#64748B !important}
+.type-tag{background:#F1F5F9 !important;color:#64748B !important}
+.type-tag.add{background:#FEF3C7 !important;color:#B45309 !important;border-color:#FDE68A !important}
+
+/* forms */
+.field input,.field select,.field textarea,.goal-input,.add-input,
+input[type=text],input[type=date],select,textarea{
+  background:#FFFFFF !important;
+  color:#0F172A !important;
+  border-color:#CBD5E1 !important;
+  color-scheme:light !important;
+}
+.field span,.field > span,.live-label{color:#64748B !important}
+input::placeholder,textarea::placeholder{color:#94A3B8 !important}
+.contract-list{background:#E2E8F0 !important}
+.contract-list div{background:#FFFFFF !important}
+
+/* buttons inside tables/cards */
+.row-actions button{background:#F8FAFC !important;color:#475569 !important;border-color:#E2E8F0 !important}
+.row-actions button:hover{background:#F1F5F9 !important;color:#0F172A !important}
+.row-actions button.ok{color:#0B7A63 !important;border-color:#B7E4D6 !important;background:#E7F5F1 !important}
+.row-actions button.no{color:#DB0011 !important;border-color:#FCA5A5 !important;background:#FFF1F2 !important}
+
+/* TOPS gate */
+.gate-card{
+  background:linear-gradient(145deg,#FFF7F8,#FFFFFF 62%) !important;
+  border-color:#FCA5A5 !important;
+  box-shadow:0 12px 30px rgba(219,0,17,.06) !important;
+}
+.gate-card::after{opacity:.32}
+.gate-card.gate-ok{background:linear-gradient(145deg,#F1FBF7,#FFFFFF 62%) !important;border-color:#B7E4D6 !important}
+.gate-kicker,.gate-badge,.gate-balance span{color:#DB0011 !important}
+.gate-title{color:#475569 !important}
+.gate-meta div{color:#64748B !important}
+.gate-meta b{color:#0F172A !important}
+.gate-explain{background:#FFF1F2 !important;border-color:#FCA5A5 !important;color:#B42318 !important}
+.gate-card.gate-ok .gate-kicker,.gate-card.gate-ok .gate-badge,.gate-card.gate-ok .gate-balance span{color:#0B7A63 !important}
+.gate-card.gate-ok .gate-explain{background:#E7F5F1 !important;border-color:#B7E4D6 !important;color:#0B7A63 !important}
+.gate-actions .btn.primary{background:#DB0011 !important}
+.side-note{background:#F8FAFC !important;border-color:#E2E8F0 !important;color:#64748B !important}
+.side-note-amber{background:#FFFBEB !important;border-color:#FDE68A !important;color:#92400E !important}
+.rule-formula code{background:#F8FAFC !important;border-color:#E2E8F0 !important;color:#475569 !important}
+.role-switch{background:#F8FAFC;border-color:#E2E8F0}
+.role-btn{color:#64748B}
+.role-btn.active{background:#FFF1F2;color:#DB0011}
+.role-hint{color:#94A3B8}
+
+/* recon-specific */
+.recon-kicker,.recon-kicker strong{color:#DB0011}
+.channel-switch{background:#FFFFFF;border-color:#E2E8F0}
+.channel-btn{color:#64748B}
+.channel-btn.active{background:#FFF1F2;color:#DB0011;box-shadow:none}
+.recon-actions .btn.primary{background:#DB0011}
+.intake-card{background:#FFFFFF !important}
+.intake-card::after{opacity:.3}
+.cips-net-card{background:#FFFFFF !important;border-color:#BFDBFE !important}
+.cips-net-card::after{opacity:.3}
+.candidate-panel{background:#FFFBEB !important;border-color:#FDE68A !important}
+.candidate-item{background:#FFFFFF !important;border-color:#E2E8F0 !important}
+.candidate-item:hover{background:#F8FAFC !important}
+.candidate-item:has(input:checked){background:#E7F5F1 !important;border-color:#B7E4D6 !important}
+.coverage-metric{background:#F8FAFC !important}
+.recon-toast{background:#FFFFFF !important;color:#334155 !important;border-color:#E2E8F0 !important;box-shadow:0 12px 30px rgba(15,23,42,.12) !important}
+
+/* Agent Console */
+.live-control,.live-trace,.approval-card{background:#FFFFFF !important}
+.provider-tab{background:#F8FAFC !important;border-color:#E2E8F0 !important;color:#475569 !important}
+.provider-tab.active{background:#FFF1F2 !important;border-color:#FCA5A5 !important;color:#DB0011 !important}
+.goal-input{background:#FFFFFF !important;color:#0F172A !important;border-color:#CBD5E1 !important}
+.contract-list div{background:#FFFFFF !important}
+.health-box{background:#F8FAFC !important;color:#475569 !important}
+.health-box.ok{background:#E7F5F1 !important;color:#0B7A63 !important;border-color:#B7E4D6 !important}
+.health-box.warn{background:#FEF3C7 !important;color:#92400E !important;border-color:#FDE68A !important}
+.health-box.bad{background:#FFF1F2 !important;color:#B42318 !important;border-color:#FCA5A5 !important}
+.approval-box{background:#FFFBEB !important;border-color:#FDE68A !important}
+.trace-item{background:#FFFFFF !important;border-color:#E2E8F0 !important}
+.trace-item.approval{background:#FFFBEB !important}
+.trace-item.error{background:#FFF1F2 !important}
+.trace-json{background:#F8FAFC !important;color:#334155 !important;border-color:#E2E8F0 !important}
+.final-box{background:#E7F5F1 !important;border-color:#B7E4D6 !important}
+.error-box{background:#FFF1F2 !important;color:#B42318 !important;border-color:#FCA5A5 !important}
+.empty-orb{color:#fff !important;background:linear-gradient(145deg,#DB0011,#9F000C) !important;box-shadow:none !important}
+.live-pill{background:#FFF1F2 !important;border-color:#FCA5A5 !important;color:#DB0011 !important}
+
+/* modal / drawer / toast */
+.drawer,.modal,.add-modal{background:#FFFFFF !important;border-color:#E2E8F0 !important}
+.drawer-backdrop,.modal-backdrop{background:rgba(15,23,42,.38) !important}
+.drawer-close,.modal-close{background:#F8FAFC !important;color:#475569 !important;border-color:#E2E8F0 !important}
+.toast,.recon-toast{background:#FFFFFF !important;color:#334155 !important;border-color:#E2E8F0 !important;box-shadow:0 12px 30px rgba(15,23,42,.12) !important}
+.toast .icon{color:#0B7A63}
+
+/* charts and small detail */
+.sandbox-chart{background:#F8FAFC !important;border-color:#E2E8F0 !important}
+.cbar .track{background:#E2E8F0}
+.cbar .fill{background:#CBD5E1}
+.sandbox-note{background:#FFFBEB !important;border-color:#FDE68A !important;color:#475569 !important}
+.formula-card{background:#E7F5F1 !important;border-color:#B7E4D6 !important}
+.result-tag{background:#FEF3C7 !important;border-color:#FDE68A !important;color:#B45309 !important}
+.review-focus{background:#FFFBEB !important}
+.mono{color:inherit}
+.icon{color:inherit}
+
+/* footer */
+.footer{border-top-color:#E2E8F0;background:transparent}
+.footer-left,.footer-right{color:#94A3B8}
+.footer-dot{background:#DB0011}
+
+/* trace / chart / misc light fixes */
+.steps::before{background:linear-gradient(180deg,rgba(13,122,99,.35),#DCE5EE 58%,transparent)}
+.step:hover{background:#F8FAFC}
+.step-dot{background:#FFFFFF;border-color:#CBD5E1}
+.step.current .step-title{color:#B45309}
+.step.done .step-dot{color:#0B7A63;border-color:#9BD8C8;background:#E7F5F1;box-shadow:none}
+.step.future{opacity:.45}
+.timeline-foot{border-top-color:#E2E8F0;color:#64748B}
+.chart-tip{background:#FFFFFF;border-color:#E2E8F0;box-shadow:0 14px 34px rgba(15,23,42,.14)}
+.chart-tip .tip-time{color:#64748B}
+.seg{background:#F1F5F9;border-color:#E2E8F0}
+.seg button{color:#64748B}
+.seg button.active{color:#DB0011;background:#FFFFFF;box-shadow:0 1px 3px rgba(15,23,42,.08)}
+.chart-legend .legend-item{color:#475569}
+.chart-body{color:#475569}
+.radar-legend{color:#475569}
+.goal-tag{background:#F8FAFC;border-color:#E2E8F0;color:#475569}
+.decision-card{background:#FFFFFF !important;border-color:#E2E8F0 !important}
+.modal-body{color:#334155}
+.modal-section p{color:#475569}
+.modal-section h4{color:#0F172A}
+.kv dt{color:#64748B}
+.kv dd{color:#334155}
+.approval-card{background:#FFFBEB !important;border-color:#FDE68A !important}
+.ac-desc{color:#475569 !important}
+.ac-top{color:#92400E !important}
+.approval-card .ac-meta b{color:#0F172A !important}
+.final-text{color:#0F172A !important}
+.live-title{color:#0F172A !important}
+.live-title em{color:#DB0011 !important}
+.trace-item .trace-text,.trace-item .trace-sub{color:#475569 !important}
+.trace-tag{background:#F8FAFC !important}
+.trace-tag.thought{background:#E7F5F1 !important;color:#0B7A63 !important}
+.trace-tag.tool{background:#EFF6FF !important;color:#1D4ED8 !important}
+.trace-tag.result{background:#FFFBEB !important;color:#B45309 !important}
+.trace-tag.err{background:#FFF1F2 !important;color:#DB0011 !important}
+
+/* ============================================================
+   Legibility pass · HSBC light
+   The original UI uses 8–10px labels for a dark, high-DPI screen.
+   On white/grey they need larger type and darker secondary ink.
+   ============================================================ */
+:root{
+  --text:#0B1220;
+  --text-2:#334155;
+  --text-3:#52637A;
+  --text-4:#6B7A90;
+}
+body{font-size:15px;line-height:1.6}
+.topbar-inner{height:72px}
+.brand-name{font-size:14px}
+.brand-sub{font-size:11px}
+.nav-btn{font-size:13.5px;padding:10px 14px}
+.nav-btn .nav-count{font-size:10px}
+.clock{font-size:12.5px}
+.avatar-meta b{font-size:12.5px}
+.avatar-meta span{font-size:11px}
+.live-pill{font-size:11.5px}
+.avatar{width:34px;height:34px;font-size:12px}
+
+.hero-lede,.tops-lede,.recon-lede,.live-lede,.page-desc{font-size:14.5px;line-height:1.8}
+.hero-kicker,.tops-kicker,.recon-kicker,.page-kicker,.live-label{font-size:10.5px}
+.kpi-label{font-size:12px}
+.kpi-value .v{font-size:31px}
+.kpi-value .cur,.kpi-value .u{font-size:13px}
+.kpi-foot{font-size:11px}
+.kpi-flag{font-size:10px}
+.kpi-submetric span{font-size:10px}
+.kpi-submetric b{font-size:12px}
+.card-title{font-size:14.5px}
+.card-sub{font-size:11.5px}
+.card-link{font-size:11.5px}
+.goal-kicker{font-size:10.5px}
+.goal-title{font-size:14px}
+.goal-id{font-size:10.5px}
+.goal-row{font-size:12.5px}
+.goal-tag{font-size:10px}
+.ledger-name{font-size:12.5px}
+.ledger-role{font-size:10px}
+.ledger-delta{font-size:11px}
+.ledger-stat b{font-size:12.5px}
+.ledger-stat span{font-size:10px}
+.bridge-chip span{font-size:9px}
+.bridge-chip b{font-size:11.5px}
+.bridge-time{font-size:9px}
+.queue-title{font-size:11.5px}
+.queue-note{font-size:10px}
+
+/* tables and statuses */
+table.data{font-size:12.5px}
+table.data th{font-size:10px}
+table.data td{font-size:12px}
+.recon-table{font-size:11.5px}
+.recon-table th{font-size:10px;padding:10px}
+.recon-table td{font-size:11.5px;padding:11px 10px}
+.tops-table{font-size:11.5px}
+.tops-table th{font-size:9.5px}
+.tops-table td{font-size:11.5px}
+.status-pill{font-size:10px;padding:3px 7px}
+.type-tag{font-size:9px}
+.source-tag{font-size:10px}
+.filter-btn{font-size:10.5px}
+.panel-kicker{font-size:9.5px}
+.panel-head h2,.table-head h2{font-size:15px}
+.recon-disclaimer{font-size:10.5px}
+.stat-label{font-size:11px}
+.stat-card b{font-size:29px}
+.stat-card small{font-size:9.5px}
+.intake-kicker{font-size:9.5px}
+.intake-title{font-size:11.5px}
+.intake-badge{font-size:9.5px}
+.intake-components span{font-size:10px}
+.intake-note{font-size:9.5px}
+.bridge-row{font-size:10.5px}
+.coverage-metric span{font-size:9.5px}
+.coverage-metric b{font-size:16px}
+.coverage-note{font-size:10px}
+.candidate-title{font-size:11px}
+.candidate-head,.candidate-count,.candidate-hint{font-size:10px}
+.rule-note{font-size:10px}
+.rule-chips span{font-size:10px}
+
+/* TOPS */
+.role-btn{font-size:11px}
+.role-hint{font-size:10px}
+.tops-stats .stat-card b{font-size:27px}
+.tops-stats .stat-card small{font-size:10px}
+.side-note{font-size:10px}
+.gate-kicker{font-size:9.5px}
+.gate-title{font-size:12.5px}
+.gate-badge{font-size:9px}
+.gate-meta div{font-size:10px}
+.gate-meta b{font-size:12px}
+.gate-explain{font-size:10px}
+.rule-formula code{font-size:9.5px}
+.pending-main b{font-size:11px}
+.pending-main span{font-size:9.5px}
+.pending-amt{font-size:11px}
+.add-item .add-amount{font-size:21px}
+.add-item .add-reason{font-size:9.5px}
+
+/* Agent trace */
+.step-title{font-size:12.8px}
+.step-time{font-size:10px}
+.step-desc{font-size:11.3px}
+.step-meta span{font-size:9.2px}
+.trace-steps .step-title{font-size:13.5px}
+.trace-steps .step-desc{font-size:11.8px}
+.trace-steps .step-meta span{font-size:9.5px}
+.agent-status-row b{font-size:12px}
+.agent-status-row span{font-size:10px}
+.agent-note{font-size:10px}
+.match-map code{font-size:9.5px}
+.summary-kicker{font-size:9px}
+
+/* Agent Console */
+.provider-tab{font-size:11.5px}
+.goal-input{font-size:12.5px}
+.contract-list div{font-size:10.5px}
+.health-box{font-size:10.5px}
+.live-note span{font-size:9.5px}
+.trace-item{font-size:11px}
+.trace-item .trace-text{font-size:11px}
+.trace-item .trace-sub{font-size:10px}
+.trace-tag{font-size:9.5px}
+.trace-json{font-size:10.5px}
+.approval-top{font-size:10.5px}
+.approval-reason{font-size:10.5px}
+.approval-amount{font-size:26px}
+.final-text{font-size:13px}
+
+/* footer */
+.footer-left,.footer-right{font-size:9px}
+
+/* Queue: waiting payments + single-item jump */
+.queue-id{font-size:10.5px;color:#52637A}
+.queue-jump{
+  font-size:10px;padding:3px 9px;border:1px solid #FCA5A5;border-radius:6px;
+  background:#FFF1F2;color:#DB0011;cursor:pointer;white-space:nowrap;
+}
+.queue-jump:hover{background:#FFE4E6;border-color:#F87171}
+.queue-jumped{background:#F0FBF7 !important}
+.queue-jump-mark{
+  margin-left:5px;padding:1px 5px;border-radius:4px;background:#E7F5F1;
+  color:#0B7A63;font-size:8.5px;font-family:var(--sans);letter-spacing:0;
+}
+.queue-jumped-label{font-size:9.5px;color:#0B7A63;white-space:nowrap}
+
+/* Priority pills: P1/P2/P3 need enough contrast on white */
+.pill.p1,.pill.p2,.pill.p3{
+  gap:5px;
+  padding:3px 9px;
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:.02em;
+}
+.pill.p1::before,.pill.p2::before,.pill.p3::before{
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:currentColor;
+  opacity:1;
+  flex:0 0 auto;
+}
+.pill.p1{color:#B45309;background:#FEF3C7;border:1px solid #FDE68A}
+.pill.p2{color:#1D4ED8;background:#EFF6FF;border:1px solid #BFDBFE}
+.pill.p3{color:#475569;background:#F1F5F9;border:1px solid #CBD5E1}
+
+/* Reduce oversized first-screen headlines; keep hierarchy without dominating the viewport */
+h1.hero-title{font-size:clamp(28px,2.5vw,42px);line-height:1.2;max-width:820px}
+.page-title{font-size:clamp(22px,2.2vw,32px)}
+.tops-hero h1{font-size:clamp(26px,2.7vw,36px);line-height:1.18}
+.recon-hero h1{font-size:clamp(28px,3vw,40px);line-height:1.12}
+.live-title{font-size:clamp(30px,3vw,44px);line-height:1.2}
+@media (max-width:760px){
+  h1.hero-title{font-size:30px}
+  .page-title{font-size:26px}
+  .tops-hero h1{font-size:30px}
+  .recon-hero h1{font-size:31px}
+  .live-title{font-size:32px}
+}
+
+/* Second pass: bring the first-screen headlines closer to body hierarchy */
+h1.hero-title{font-size:clamp(26px,2.2vw,36px);line-height:1.22;max-width:760px}
+.page-title{font-size:clamp(21px,2vw,30px)}
+.tops-hero h1{font-size:clamp(25px,2.4vw,34px);line-height:1.2}
+.recon-hero h1{font-size:clamp(26px,2.6vw,36px)}
+.live-title{font-size:clamp(28px,2.7vw,40px);line-height:1.22}
+@media (max-width:760px){
+  h1.hero-title{font-size:28px}
+  .page-title{font-size:24px}
+  .tops-hero h1{font-size:28px}
+  .recon-hero h1{font-size:29px}
+  .live-title{font-size:30px}
+}
+
+/* ============================================================
+   Numeric legibility · Windows / ClearType friendly
+   Larger, darker, heavier tabular numbers. Use fonts that exist
+   on Windows (Cascadia/Consolas) before falling back to macOS SF Mono.
+   ============================================================ */
+:root{
+  --mono:"SFMono-Regular","Cascadia Mono","Segoe UI Mono","Consolas","Roboto Mono",ui-monospace,monospace;
+}
+.kpi-value,.ledger-balance,.stat-card b,.gate-balance b,.intake-total b,
+.amount,.num,.conf,.ref-cell,.sum-card .v,.plan-metric b,.result-metric b,
+.campaign-stat b,.kpi-target b,.option-cost,.tool-name,.mono{
+  font-variant-numeric:tabular-nums lining-nums;
+}
+.kpi-value .v{font-size:35px;font-weight:600;letter-spacing:-.015em;color:#0B1220}
+.kpi-value .cur,.kpi-value .u{font-size:13.5px;font-weight:500;color:#3F5068}
+.kpi-value .v .unit{font-weight:600}
+.kpi-foot{color:#52637A}
+.ledger-balance .v{font-size:clamp(31px,2.8vw,41px);font-weight:600;letter-spacing:-.02em;color:#0B1220}
+.ledger-balance .cur,.ledger-balance .u{font-size:12.5px;font-weight:500;color:#3F5068}
+.ledger-delta b,.ledger-stat b{font-weight:600;color:#0B1220}
+.ledger-stat b{font-size:12.5px}
+.bridge-chip b,.flow-amount{font-weight:600;color:#0B7A63}
+.bridge-net b,.bridge-net-line b,.ledger-status b{font-weight:600}
+
+.stat-card b{font-size:33px;font-weight:600;letter-spacing:-.02em;color:#0B1220}
+.tops-stats .stat-card b{font-size:30px}
+.stat-card small{color:#52637A}
+.gate-balance b{font-size:42px;font-weight:600;letter-spacing:-.02em;color:#0B1220}
+.gate-meta b{font-size:13px;font-weight:600;color:#0B1220}
+.intake-total b{font-size:42px;font-weight:600;letter-spacing:-.025em;color:#0B1220}
+.intake-components b{font-size:10.5px;font-weight:600;color:#1E293B}
+.intake-rows b,.bridge-row b{font-size:13px;font-weight:600;color:#0B1220}
+.intake-components span,.bridge-row span{color:#52637A}
+
+.recon-table .amount{font-size:12.5px;font-weight:600;color:#0B1220;letter-spacing:.0em}
+.recon-table .ref-cell{font-size:11px;font-weight:500;color:#334155}
+.recon-table .conf{font-size:11px;font-weight:600;color:#334155}
+.recon-table .num,.recon-table td.num{font-weight:600;color:#0B1220}
+.tops-table .num{font-size:11.5px;font-weight:600;color:#1E293B}
+.tops-table .num.key{font-size:12.5px;font-weight:600;color:#0B1220}
+.branch-cell b{font-size:11.5px;font-weight:600}
+.branch-date{font-size:10px;color:#52637A}
+.add-amount{font-size:23px;font-weight:600;color:#B45309}
+.pending-amt{font-size:11.5px;font-weight:600;color:#C00012}
+.pending-main b{font-size:10.5px;font-weight:600;color:#0B1220}
+.queue-amount-group b{font-size:11px;font-weight:600;color:#0B1220}
+.queue-amount-total b{font-size:13px;font-weight:600;color:#0B7A63}
+.queue-amount-group span,.queue-amount-total span{color:#52637A}
+.queue-id{font-weight:500;color:#334155}
+.queue-note{color:#52637A}
+.queue-amount-head span{color:#52637A}
+
+.sum-card .v{font-size:13px;font-weight:600;color:#0B1220}
+.sum-card .v.amount{font-size:17px}
+.raw-list dd{font-size:9px;font-weight:500;color:#334155}
+.raw-list dt{color:#52637A}
+
+.plan-metric b,.result-metric b,.campaign-stat b,.kpi-target b{font-weight:600;color:#0B1220}
+.plan-metric b{font-size:16px}
+.result-metric b{font-size:19px}
+.campaign-stat b{font-size:24px}
+.kpi-target b{font-size:17px}
+.option-cost{font-weight:600;color:#0B1220}
+.table-count{color:#52637A}
+
+/* Keep these readable at the compact queue font sizes */
+.queue-jump{font-size:10.5px;font-weight:600}
+.pill.p1,.pill.p2,.pill.p3{font-weight:600}
+
+/* Trend / customer drawer numbers */
+.trend-kpi b{font-size:22px;font-weight:600;letter-spacing:-.015em;color:#0B1220}
+.trend-kpi span,.trend-kpi small{color:#52637A}
+.trend-day b{font-size:15px;font-weight:600;color:#0B1220}
+.trend-day span,.trend-day small{color:#52637A}
+.trend-segment-head b{font-size:14px;font-weight:600;color:#0B1220}
+.opp-score{font-size:19px;font-weight:700}
+.opp-metrics b{font-size:11.5px;font-weight:600;color:#0B1220}
+.opp-opportunity span{font-size:11.5px;font-weight:700;color:#0B7A63}
+.trend-note{color:#52637A}
+
+/* Final numeric + single-line hero pass */
+h1.hero-title{
+  font-size:clamp(24px,1.8vw,32px);
+  max-width:none;
+  white-space:nowrap;
+  letter-spacing:-.018em;
+  line-height:1.25;
+}
+@media (max-width:1200px){
+  h1.hero-title{white-space:normal;font-size:28px;max-width:760px}
+}
+.kpi-value .v{font-size:39px;font-weight:700;letter-spacing:-.02em}
+.kpi-value .cur,.kpi-value .u{font-size:14px;font-weight:600;color:#334155}
+.ledger-balance .v{font-size:clamp(33px,3vw,44px);font-weight:700;letter-spacing:-.025em}
+.ledger-balance .cur,.ledger-balance .u{font-size:13px;font-weight:600;color:#334155}
+.stat-card b{font-size:36px;font-weight:700}
+.tops-stats .stat-card b{font-size:33px;font-weight:700}
+.gate-balance b{font-size:45px;font-weight:700}
+.intake-total b{font-size:45px;font-weight:700;letter-spacing:-.03em}
+.intake-rows b,.bridge-row b{font-size:14px;font-weight:700}
+.intake-components b{font-size:11px;font-weight:700}
+.queue-amount-group b{font-size:13.5px;font-weight:700;letter-spacing:-.01em}
+.queue-amount-total b{font-size:15px;font-weight:700}
+.queue-id{font-size:11.5px;font-weight:600;color:#1E293B}
+table.data td.num{font-size:14px;font-weight:700;color:#0B1220}
+.recon-table .amount{font-size:14px;font-weight:700;color:#0B1220}
+.recon-table .ref-cell{font-size:11.5px;font-weight:600;color:#1E293B}
+.recon-table .conf{font-size:11.5px;font-weight:700;color:#1E293B}
+.tops-table .num{font-size:12.5px;font-weight:700;color:#0B1220}
+.tops-table .num.key{font-size:13.5px;font-weight:700}
+.branch-cell b{font-size:12px;font-weight:700}
+.branch-date{font-size:10.5px;font-weight:600;color:#3F5068}
+.add-amount{font-size:25px;font-weight:700}
+.pending-amt{font-size:12px;font-weight:700}
+.pill.p1,.pill.p2,.pill.p3{font-size:11px;font-weight:700}
+.trend-kpi b{font-size:24px;font-weight:700}
+.trend-day b{font-size:16px;font-weight:700}
+.trend-segment-head b{font-size:15px;font-weight:700}
+.opp-score{font-size:20px;font-weight:700}
+.opp-metrics b{font-size:12px;font-weight:700}
+.queue-jump{font-size:11px;font-weight:700}
+
+/* Rebalance numeric weight: readable on Windows, not display-heavy */
+.kpi-value .v{font-size:35px;font-weight:600;letter-spacing:-.015em}
+.ledger-balance .v{font-size:clamp(30px,2.7vw,39px);font-weight:600}
+.stat-card b{font-size:32px;font-weight:600}
+.tops-stats .stat-card b{font-size:30px;font-weight:600}
+.gate-balance b{font-size:40px;font-weight:600}
+.intake-total b{font-size:40px;font-weight:600}
+.intake-rows b,.bridge-row b{font-size:13px;font-weight:600}
+.intake-components b{font-size:10.5px;font-weight:600}
+.queue-amount-group b{font-size:12px;font-weight:600}
+.queue-amount-total b{font-size:13px;font-weight:600}
+.queue-id{font-size:11px;font-weight:500}
+table.data td.num{font-size:12.5px;font-weight:600}
+.recon-table .amount{font-size:12.5px;font-weight:600}
+.recon-table .ref-cell,.recon-table .conf{font-size:11px;font-weight:500}
+.tops-table .num{font-size:11.5px;font-weight:600}
+.tops-table .num.key{font-size:12.5px;font-weight:600}
+.branch-cell b{font-size:11.5px;font-weight:600}
+.branch-date{font-size:10.5px;font-weight:500}
+.add-amount{font-size:22px;font-weight:600}
+.pending-amt{font-size:11.5px;font-weight:600}
+.pill.p1,.pill.p2,.pill.p3{font-size:10.5px;font-weight:600}
+.trend-kpi b{font-size:21px;font-weight:600}
+.trend-day b{font-size:14.5px;font-weight:600}
+.trend-segment-head b{font-size:14px;font-weight:600}
+.opp-score{font-size:18px;font-weight:600}
+.opp-metrics b{font-size:11.5px;font-weight:600}
+.queue-jump{font-size:10.5px;font-weight:600}
+.kpi-value .cur,.kpi-value .u{font-size:13.5px;font-weight:500}
+.ledger-balance .cur,.ledger-balance .u{font-size:12.5px;font-weight:500}
+
+/* Align secondary page first-screen titles with the homepage goal title */
+.page-title,.tops-hero h1,.live-title{
+  font-size:clamp(24px,1.8vw,32px);
+  line-height:1.25;
+  letter-spacing:-.018em;
+}
+@media (max-width:1200px){
+  .page-title,.tops-hero h1,.live-title{font-size:28px}
+}
+
+/* Use a plain-zero sans stack for data; coding mono fonts often add a
+   slashed/dotted zero, which is noisy on a projected Windows screen. */
+:root{
+  --num:"Segoe UI","Helvetica Neue",Arial,"Microsoft YaHei",sans-serif;
+}
+.kpi-value,.kpi-value .v,.kpi-value .cur,.kpi-value .u,
+.ledger-balance,.ledger-balance .v,.ledger-balance .cur,.ledger-balance .u,
+.stat-card b,.gate-balance b,.gate-meta b,.intake-total b,
+.intake-rows b,.bridge-row b,.intake-components b,
+.amount,.num,.conf,.ref-cell,.sum-card .v,.raw-list dd,
+.plan-metric b,.result-metric b,.campaign-stat b,.kpi-target b,
+.option-cost,.table-count,.filter-btn span,
+.queue-amount-group b,.queue-amount-total b,
+.queue-id{font-family:var(--num)}
+
+/* Thin the data back down; 600/700 was too heavy for Windows ClearType. */
+.kpi-value .v{font-size:34px;font-weight:500}
+.kpi-value .cur,.kpi-value .u{font-weight:400}
+.ledger-balance .v{font-size:38px;font-weight:500}
+.ledger-balance .cur,.ledger-balance .u{font-weight:400}
+.stat-card b{font-size:31px;font-weight:500}
+.tops-stats .stat-card b{font-size:29px;font-weight:500}
+.gate-balance b{font-size:39px;font-weight:500}
+.gate-meta b{font-weight:500}
+.intake-total b{font-size:39px;font-weight:500}
+.intake-rows b,.bridge-row b{font-weight:500}
+.intake-components b{font-weight:500}
+.queue-amount-group b{font-weight:500}
+.queue-amount-total b{font-weight:500}
+table.data td.num{font-weight:500}
+.recon-table .amount{font-weight:500}
+.recon-table .ref-cell,.recon-table .conf{font-weight:400}
+.tops-table .num{font-weight:500}
+.tops-table .num.key{font-weight:500}
+.branch-cell b{font-weight:500}
+.add-amount{font-weight:500}
+.pending-amt{font-weight:500}
+.trend-kpi b{font-weight:500}
+.trend-day b{font-weight:500}
+.trend-segment-head b{font-weight:500}
+.opp-score{font-weight:500}
+.opp-metrics b{font-weight:500}
+.queue-jump{font-weight:500}
+h1.hero-title .num{font-family:var(--num);font-weight:500}
+
+/* Apply the plain-zero stack to mono-labelled IDs/times as well */
+.mono,.clock,.step-time,.tool-time,.tool-name,.queue-id{
+  font-family:var(--num);
+  font-variant-numeric:tabular-nums;
+}
